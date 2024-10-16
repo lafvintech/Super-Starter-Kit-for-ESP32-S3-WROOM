@@ -31,8 +31,8 @@ Install ControlP5.
 
 .. image:: img/other/processing0.png
 
-Open the “Super_Starter_Kit_for_ESP32_S3\Sketches\Sketches\Sketch_24.1_
-WiFiClient\sketchWiFi\sketchWiFi.pde”, and click "Run".
+Open the “Super_Starter_Kit_for_ESP32_S3\\Sketches\\Sketches\\Sketch_24.1_
+WiFiClient\\sketchWiFi\\Processing_wifi.pde”, and click "Run".
 
 .. image:: img/other/processing4.png
 
@@ -76,7 +76,7 @@ Connect
 
 Sketch
 ^^^^^^^
-Before running the Sketch, please open “sketchWiFi.pde.” first, and click “Run”.
+Before running the Sketch, please open “Processing_wifi.pde.” first, and click “Run”.
 
 .. image:: img/software/24.3.png
 
@@ -90,7 +90,7 @@ owing information based on "LOCAL IP" and "LOCAL PORT" in the figure above.
 
 .. image:: img/software/24.1.png
 
-REMOTE_IP needs to be filled in according to the interface of sketchWiFi.pde. 
+REMOTE_IP needs to be filled in according to the interface of Processing_wifi.pde. 
 Taking this tutorial as an example, its REMOTE_IP is “192.168.2.112”. Generally, 
 by default, the ports do not need to change its value.
 
@@ -188,6 +188,7 @@ Connect ESP32-S3 to the computer using a USB cable.
 Sketch
 ^^^^^^^
 Before running Sketch, please modify the contents of the box below first.
+
 **Sketch_24.2_As_Server**
 
 .. image:: img/software/24.2.png
@@ -200,8 +201,8 @@ router, press the reset button as shown below and wait for ESP32-S3 to run again
 
 .. image:: img/phenomenon/24.2.png
 
-Processing： Open the “Super_Starter_Kit_for_ESP32_S3\Sketches\Sketches
-\Sketch_24.2_WiFiServer\ sketchWiFi\sketchWiFi.pde”. Based on the messages printed 
+Processing： Open the “Super_Starter_Kit_for_ESP32_S3\\Sketches\\Sketches
+\\Sketch_24.2_WiFiServer\\sketchWiFi\\Processing_wifi.pde”. Based on the messages printed 
 by the serial monitor, enter correct IP address and serial port in Processing to 
 establish connection and make communication.
 

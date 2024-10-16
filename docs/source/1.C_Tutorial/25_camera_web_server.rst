@@ -9,6 +9,7 @@ web page to access IP address to obtain video and image data.
 Connect
 ^^^^^^^
 Connect ESP32-S3 to the computer using the USB cable.
+
 .. image:: img/0/connect1.png
 
 Sketch

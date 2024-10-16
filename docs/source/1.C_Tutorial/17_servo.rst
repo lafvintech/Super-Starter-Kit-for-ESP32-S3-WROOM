@@ -118,7 +118,7 @@ The following is the program code:
     #define SERVO_CHN 0   //define the pwm channel
     #define SERVO_FRQ 50  //define the pwm frequency
     #define SERVO_BIT 12  //define the pwm precision
-    #define ADC_PIN   2  //define the adc pin  
+    #define ADC_PIN   14  //define the adc pin  
 
     void servo_set_pin(int pin);
     void servo_set_angle(int angle);

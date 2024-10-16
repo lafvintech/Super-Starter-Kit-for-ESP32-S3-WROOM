@@ -56,14 +56,15 @@ Sketch
 ^^^^^^^
 **Sketch_09.2_TouchLamp**
 
-.. image:: img/software/9.2.png
+.. image:: img/phenomenon/9.2.png
     
 Download the code to ESP32-S3 WROOM, open the serial monitor, and set the baud 
 rate to 115200. Touch jumper with hand. As shown in the following figure,
 
 .. image:: img/phenomenon/9.2-1.png
 
-.. image:: img/phenomenon/9.2.png
+
+.. image:: img/software/9.2.png
 
 With a touch pad, the state of the LED changes with each touch, and the detection 
 state of the touch sensor is printed in the serial monitor.
@@ -74,33 +75,41 @@ The following is the program code:
 
 .. code-block:: C
 
-    #define PIN_LED     21
-    #define PRESS_VAL   200000	  //Set a threshold to judge touch
-    #define RELEASE_VAL 60000	    //Set a threshold to judge release
+    #define PIN_LED     21         // Define the LED pin
+    #define TOUCH_PIN   14          // Use a valid touch pin on ESP32-S3
+    #define PRESS_VAL   50000      // This threshold may need adjustment
+    #define RELEASE_VAL 65000      // This threshold may need adjustment
 
-    bool isProcessed = false;
+    bool isProcessed = false;      // Flag to track if touch event has been processed
+
     void setup() {
-    Serial.begin(115200);
-    pinMode(PIN_LED, OUTPUT);
+    Serial.begin(115200);        // Initialize serial communication
+    pinMode(PIN_LED, OUTPUT);    // Set LED pin as output
     }
+
     void loop() {
-    if (touchRead(T14) > PRESS_VAL) {
-        if (!isProcessed) {
-        isProcessed = true;
-        Serial.println("Touch detected! ");
-        reverseGPIO(PIN_LED);
+    int touchValue = touchRead(TOUCH_PIN);  // Read touch sensor value
+    //Serial.println(touchValue);  // Print touch value for debugging
+
+    if (touchValue < PRESS_VAL) {  // Note: Lower value indicates touch
+        if (!isProcessed) {          // If touch hasn't been processed yet
+        isProcessed = true;        // Mark as processed
+        Serial.println("Released!");
+        reverseGPIO(PIN_LED);      // Toggle LED state
         }
     }
-    if (touchRead(T14) < RELEASE_VAL) {
-        if (isProcessed) {
-        isProcessed = false;
-        Serial.println("Released! ");
+    if (touchValue > RELEASE_VAL) {  // Touch released
+        if (isProcessed) {             // If a touch was previously processed
+        isProcessed = false;         // Reset processed flag
+        Serial.println("Touch detected!");
         }
     }
+    
+    delay(50);  // Short delay to prevent too frequent readings
     }
 
     void reverseGPIO(int pin) {
-    digitalWrite(pin, !digitalRead(pin));
+    digitalWrite(pin, !digitalRead(pin));  // Toggle the state of the given pin
     }
 
 
