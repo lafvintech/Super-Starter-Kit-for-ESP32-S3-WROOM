@@ -1,7 +1,11 @@
 Preparation
 =============
 
-在本章中,我们先进行驱动 编程软件的安装以及软件环境的配置,如果你已经完成了
+In this chapter, we will first proceed with the installation of the driver 
+programming software and the configuration of the software environment. If 
+you have already completed this, you can skip to the formal course.
+
+Click to view :ref:`C-Tutorial <c_tutorial_0_led>`.
 
 .. toctree::
     :maxdepth: 2

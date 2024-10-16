@@ -1,3 +1,5 @@
+.. _c_tutorial_0_led:
+
 Chapter 0 LED
 =================
 

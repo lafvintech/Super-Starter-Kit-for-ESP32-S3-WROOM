@@ -1,4 +1,4 @@
-驱动安装
+Driver installation
 =========================
 
 Installing the CH343 Driver (Importance)

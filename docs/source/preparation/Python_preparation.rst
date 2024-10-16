@@ -1,4 +1,4 @@
-Python language reparation
+Python Language Preparation
 ============================
 
 Download the Thonny

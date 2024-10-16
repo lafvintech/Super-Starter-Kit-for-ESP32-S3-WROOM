@@ -1,5 +1,5 @@
-LAFVIN Basic Starter Kit for Raspberry Pi
-===========================================
+LAFVIN LAFVIN Super Starter Kit For Esp32 S3 
+==============================================
 
 .. toctree::
    :maxdepth: 2

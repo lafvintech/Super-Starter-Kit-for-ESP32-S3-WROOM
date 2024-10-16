@@ -1,4 +1,4 @@
-C language Preparation
+C Language Preparation
 ===================================
 
 Download the Arduino IDE 2.x.x
