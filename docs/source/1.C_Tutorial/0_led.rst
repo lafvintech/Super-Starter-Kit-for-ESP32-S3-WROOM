@@ -15,7 +15,16 @@ In this project, we will use ESP32-S3 WROOM to control blinking a common LED
 
 Component List
 ^^^^^^^^^^^^^^^^
-.. image:: img/0/list0.png
+- ESP32-S3-WROOM x1
+- Type C USB Cable x1
+
+Power
+^^^^^^^
+ESP32-S3 WROOM needs 5v power supply. In this tutorial, we need connect ESP32-S3 
+WROOM to computer via USB cable to power it and program it. We can also use other 
+5v power source to power it.
+
+.. image:: img/0/connect1.png
 
 Sketch
 ^^^^^^^^^^^
@@ -109,9 +118,6 @@ The following is the program code:
     digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
     delay(1000);                       // wait for a second
     }
-
-Final
-^^^^^^
 
 
 
