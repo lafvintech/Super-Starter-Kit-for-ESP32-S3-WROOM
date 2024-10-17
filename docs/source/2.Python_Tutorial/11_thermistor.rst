@@ -30,6 +30,7 @@ Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”. 
 Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “11.1_Thermo
 meter” and double click “Thermometer.py”.
+
 **11.1_Thermometer**
 
 .. image:: img/software/11.1.png

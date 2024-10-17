@@ -31,24 +31,23 @@ Install ControlP5.
 
 .. image:: img/other/processing0.png
     
-Open the “Super_Starter_Kit_for_ESP32_S3\Sketches\Sketches\Sketch_20.1_W
-iFiClient\sketchWiFi\sketchWiFi.pde”, and click "Run".
+Open the “Super_Starter_Kit_for_ESP32_S3\\processing\\Processing_wifi.pde”, and click "Run".
 
 .. image:: img/other/processing_code.png
 
 The new pop-up interface is as follows. If ESP32-S3 is used as client, select 
-TCP SERVER mode for sketchWiFi
+TCP SERVER mode for Processing_wifi
 
 .. image:: img/other/processing4.png
 
-When sketchWiFi selects TCP SERVER mode, ESP32-S3 Sketch needs to be changed 
-according to sketchWiFi's displaying of LOCAL IP or LOCAL PORT.
+When Processing_wifi selects TCP SERVER mode, ESP32-S3 Sketch needs to be changed 
+according to Processing_wifi's displaying of LOCAL IP or LOCAL PORT.
 
-If ESP32-S3 serves as server, select TCP CLIENT mode for sketchWiFi.
+If ESP32-S3 serves as server, select TCP CLIENT mode for Processing_wifi.
 
-.. image:: img/other/processing4.png
+.. image:: img/other/processing4-1.png
 
-When sketchWiFi selects TCP CLIENT mode, the LOCAL IP and LOCAL PORT of sketchWiFi 
+When Processing_wifi selects TCP CLIENT mode, the LOCAL IP and LOCAL PORT of Processing_wifi 
 need to be changed according to the IP address and port number printed by the serial 
 monitor.
 
@@ -79,14 +78,14 @@ Connect
 
 Code
 ^^^^^^^^^^^
-Before running the Code, please open “sketchWiFi.pde.” first, and click “Run”.
+Before running the Code, please open “Processing_wifi.pde.” first, and click “Run”.
 
 .. image:: img/other/processing_code.png
 
 The newly pop up window will use the computer’s IP address by default and open a 
 data monitor port. Click “Listening”。
 
-.. image:: img/other/processing4.png
+.. image:: img/other/processing4-2.png
 
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
@@ -103,11 +102,11 @@ in the box below:
 .. image:: img/software/21.1.png
 
 Click “Run current script” and in “Shell”, you can see ESP32-S3 automatically 
-connects to sketchWiFi.
+connects to Processing_wifi.
 
 .. image:: img/software/21.1-1.png
 
-If you don’t click “Listening” for sketchWiFi, ESP32-S3 will fail to connect and 
+If you don’t click “Listening” for Processing_wifi, ESP32-S3 will fail to connect and 
 will print information as follows:
 
 .. image:: img/software/21.1-2.png
@@ -180,11 +179,11 @@ Code
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “21.2_TCP_a
-s_Server” and double click “TCP_as_Server.py”.
+Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “21.2_TCP_as_Server” and double click “TCP_as_Server.py”.
 
 Before clicking “Run current script”, please modify the name and password of your 
 router shown in the box below.
+
 **21.2_TCP_as_Server**
 
 .. image:: img/software/21.2.png
@@ -196,15 +195,15 @@ waiting to connecting to other network devices.
 .. image:: img/software/21.2-1.png
 
 Processing： Open the “Super_Starter_Kit_for_ESP32_S3/Codes/MicroPytho
-n_Codes/21.2_TCP_as_Server/ sketchWiFi/sketchWiFi.pde”. Based on the message 
+n_Codes/21.2_TCP_as_Server/sketchWiFi/Processing_wifi.pde”. Based on the message 
 printed in "Shell", enter the correct IP address and port when processing, and 
 click to establish a connection with ESP32-S3 to communicate.
 
 .. image:: img/software/21.2-2.png
 
-You can enter any information in the “Send Box” of sketchWiFi. Click “Send” and 
+You can enter any information in the “Send Box” of Processing_wifi. Click “Send” and 
 ESP32-S3 will print the received messages to “Shell” and send them back to 
-sketchWiFi.
+Processing_wifi.
 
 .. image:: img/software/21.2-3.png
 

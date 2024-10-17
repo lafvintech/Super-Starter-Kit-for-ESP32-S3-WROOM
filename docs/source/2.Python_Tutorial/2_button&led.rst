@@ -100,7 +100,7 @@ too fast for humans to detect but not for computer microcontrollers. The same is
 true when the push button switch is released. This unwanted phenomenon is known 
 as “bounce”.
 
-.. image:: img/other/
+.. image:: img/other/2.2.png
 
 Therefore, if we can directly detect the state of the push button switch, there 
 are multiple pressing and releasing actions in one pressing cycle. This buffeting 

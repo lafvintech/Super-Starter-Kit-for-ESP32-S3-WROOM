@@ -28,14 +28,16 @@ Connect
 
 Code
 ^^^^^^^
-n this project, we will make a flowing water light with a 74HC595 chip to learn 
+In this project, we will make a flowing water light with a 74HC595 chip to learn 
 about its functions. Move the program folder “Super_Starter_Kit_for_ESP
 32_S3/Python/Python_Codes” to disk(D) in advance with the path of “D:/Micropyth
 on_Codes”. 
+
 Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “1
 3.1_Flowing_Water_Light”. Select “my74HC595.py”, right click your mouse to selec
 t “Upload to /”, wait for “my74HC595.py”to be uploaded to ESP32-S3 and then doub
 le click “Flowing_Water_Light.py”.
+
 **13.1_Flowing_Water_Light**
 
 .. image:: img/software/13.1.png

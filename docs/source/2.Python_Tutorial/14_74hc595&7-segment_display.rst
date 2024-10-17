@@ -44,7 +44,7 @@ gment_display.py”.
 Click “Run current script”，and you'll see a 1-bit, 7-segment display displaying 
 0-f in a loop.
 
-.. image:: img/phenomenon/15.1.png
+.. image:: img/phenomenon/14.1.png
 
 Code
 ^^^^^^
@@ -55,8 +55,8 @@ The following is the program code:
     import time
     from my74HC595 import Chip74HC595
 
-    lists =[0xc0, 0xf9, 0xa4, 0xb0, 0x99, 0x92, 0x82, 0xf8,
-            0x80, 0x90, 0x88, 0x83, 0xc6, 0xa1, 0x86, 0x8e]
+    lists =[0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07,
+            0x7f, 0x6f, 0x77, 0x7c, 0x39, 0x5e, 0x79, 0x71]
 
     chip = Chip74HC595(12,13,14)
     try:
@@ -66,6 +66,7 @@ The following is the program code:
                 time.sleep_ms(500)
     except:
         pass
+
 
 
 

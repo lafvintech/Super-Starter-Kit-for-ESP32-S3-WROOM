@@ -98,6 +98,7 @@ Code
 ^^^^^^
 Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “09.2_Soft_C
 olorful_Light” and double click “Soft_Colorful_Light.py”.
+
 **09.2_Soft_Colorful_Light**
 
 .. image:: img/software/9.2.png

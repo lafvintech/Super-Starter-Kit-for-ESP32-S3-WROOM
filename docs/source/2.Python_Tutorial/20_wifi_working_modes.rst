@@ -44,8 +44,8 @@ The following is the program code:
     import time
     import network
 
-    ssidRouter     = '2A804' #Enter the router name
-    passwordRouter = 'la1234567890' #Enter the router password
+    ssidRouter     = 'xxxxxxxx' #Enter the router name
+    passwordRouter = 'xxxxxxxx' #Enter the router password
 
     def STA_Setup(ssidRouter,passwordRouter):
         print("Setup start")
@@ -68,9 +68,8 @@ The following is the program code:
 Project 20.2 AP mode 
 ------------------------
 
-Component List & Circuit
-^^^^^^^^^^^^^^^^^^^^^^^^^^
 Component List & Circuit are the same as in Project 20.1.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Circuit
 ^^^^^^^

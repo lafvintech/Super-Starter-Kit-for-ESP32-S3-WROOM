@@ -48,7 +48,6 @@ The following is the program code:
 
     xVal=ADC(Pin(14))
     yVal=ADC(Pin(13))
-    zVal=Pin(12,Pin.IN,Pin.PULL_UP)
 
     xVal.atten(ADC.ATTN_11DB)
     yVal.atten(ADC.ATTN_11DB)
@@ -56,8 +55,15 @@ The following is the program code:
     yVal.width(ADC.WIDTH_12BIT)
 
     while True:
-    print("X,Y,Z:",xVal.read(),",",yVal.read(),",",zVal.value())
+    print("X,Y:",xVal.read(),",",yVal.read())
     time.sleep(1)
+
+    
+    
+    
+    
+    
+
 
   
   

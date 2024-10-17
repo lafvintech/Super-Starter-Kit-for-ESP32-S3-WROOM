@@ -35,6 +35,7 @@ Code
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”. 
 Codes of this project is logically the same as the project Soft Light. 
+
 **10.1_Nightlamp**
 
 .. image:: img/software/10.1.png

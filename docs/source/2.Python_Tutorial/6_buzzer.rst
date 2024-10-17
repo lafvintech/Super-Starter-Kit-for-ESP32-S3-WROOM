@@ -36,6 +36,7 @@ odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
 Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “06.1_Doorbe
 ll” and double click “Doorbell.py”.
+
 **06.1_Doorbell**
 
 .. image:: img/software/6.1.png

@@ -34,6 +34,7 @@ folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes” to disk(D)
 in advance with the path of “D:/Micropython_Codes”. Open “Thonny”，click“This 
 computer” >> “D:” >> “Micropython_Codes” >> “04.1_BreatheLight” and double click 
 “BreatheLight.py”.
+
 **04.1_BreatheLight**
 
 .. image:: img/software/4.1.png
@@ -89,6 +90,7 @@ Flowing Light with tail was implemented with PWM. Open “Thonny”, click “Th
 computer” >> “D:” >> “Micropython_Codes” >> “04.2_FlowingLight”. Select “pwm.py”, 
 right click to select “Upload to /”, wait for “pwm.py” to be uploaded to ESP32-S
 3 and then double click “FlowingLight.py”.
+
 **04.2_FlowingLight**
 
 .. image:: img/software/4.2.png

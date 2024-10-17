@@ -36,6 +36,7 @@ Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”. 
 Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “15.2_Moto
 r_And_Driver” and double click “Motor_And_Driver.py”.
+
 **15.1_Motor_And_Driver**
 
 .. image:: img/software/15.1.png

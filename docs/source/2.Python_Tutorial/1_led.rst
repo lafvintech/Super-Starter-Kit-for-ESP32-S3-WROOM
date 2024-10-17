@@ -51,7 +51,7 @@ the illustration below.
 
 Make sure ESP32-S3 has been connected with the computer with ESP32-S3 correctly. 
 Click “Stop/Restart backend” or press the reset button, and then wait to see what 
-interface will show up.
+interface will sho  w up.
 
 .. image:: img/software/1.2.png
 
@@ -66,12 +66,17 @@ and the LED in the circuit starts to blink.
 .. image:: img/software/1.3.png
 
 **Uploading code to ESP32S3**
+
 As shown in the following illustration, right-click the file Blink.py and select 
 “Upload to /” to upload code to ESP32S3.
 
 .. image:: img/software/1.4.png
 
 Upload boot.py in the same way.
+
+.. image:: img/software/1.5-1.png
+
+.. image:: img/software/1.5-2.png
 
 .. image:: img/software/1.5.png
 
