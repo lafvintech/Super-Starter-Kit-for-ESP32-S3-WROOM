@@ -11,6 +11,7 @@ Click to view :ref:`C-Tutorial <c_tutorial_0_led>`.
     :maxdepth: 2
 
     install_driver
+    download_code
     C_preparation
     Python_preparation
     Notes_For_GPIO
