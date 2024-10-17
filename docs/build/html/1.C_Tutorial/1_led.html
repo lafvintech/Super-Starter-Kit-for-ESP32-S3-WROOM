@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 1 LED &mdash; Super-Starter-Kit-for-ESP32-S3-WROOM  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 2 Button &amp; LED" href="2_btn%26led.html" />
+    <link rel="prev" title="Chapter 0 LED" href="0_led.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about_this_kit.html">About This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component_list.html">Component List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preparation/preparation.html">Preparation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="c_tutorial.html">C Language Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="0_led.html">Chapter 0 LED</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chapter 1 LED</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-1-1-blink">Project 1.1 Blink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#component-list">Component List</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#component-knowledge">Component knowledge</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#connect">Connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sketch">Sketch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2_btn%26led.html">Chapter 2 Button &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_led_bar.html">Chapter 3 LED Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_analog%26pwm.html">Chapter 4 Analog &amp; PWM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_rgb_led.html">Chapter 5 RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_buzzer.html">Chapter 6 Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_serial_communication.html">Chapter 7 Serial Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_ad_converter.html">Chapter 8 AD Converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_touch_sensor.html">Chapter 9 Touch Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_potentiometer.html">Chapter 10 Potentiometer &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_photoresistor.html">Chapter 11 Photoresistor &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_thermistor.html">Chapter 12 Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_joystick.html">Chapter 13 Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_74HC595%26led_bar_graph.html">Chapter 14 74HC595 &amp; LED Bar Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_74HC595%267-segment_display.html">Chapter 15 74HC595 &amp; 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_relay%26motor.html">Chapter 16 Relay &amp; Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_servo.html">Chapter 17 Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="18_lcd1602.html">Chapter 18 LCD1602</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19_ultrasonic_ranging.html">Chapter 19 Ultrasonic Ranging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20_bluetooth.html">Chapter 20 Bluetooth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_read_and_write_the_sdcard.html">Chapter 21 Read and Write the SDcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_play_sd_card_music.html">Chapter 22 Play SD card music</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_wifi_working_modes.html">Chapter 23 WiFi Working Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_tcpip.html">Chapter 24 TCP/IP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_camera_web_server.html">Chapter 25 Camera Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_camera_tcp_server.html">Chapter 26 Camera Tcp Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2.Python_Tutorial/python_tutorial.html">Python Language Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components_Kit/Components_Kit.html">Components Introduction</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Super-Starter-Kit-for-ESP32-S3-WROOM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="c_tutorial.html">C Language Tutorial</a></li>
+      <li class="breadcrumb-item active">Chapter 1 LED</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/1.C_Tutorial/1_led.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chapter-1-led">
+<h1>Chapter 1 LED<a class="headerlink" href="#chapter-1-led" title="Link to this heading"></a></h1>
+<p><strong>Description</strong>
+This chapter is the Start Point in the journey to build and explore ESP32-S3
+WROOM electronic projects. We will start with simple “Blink” project</p>
+<section id="project-1-1-blink">
+<h2>Project 1.1 Blink<a class="headerlink" href="#project-1-1-blink" title="Link to this heading"></a></h2>
+<p>In this project, we will use ESP32-S3 WROOM to control blinking a common LED.</p>
+</section>
+<section id="component-list">
+<h2>Component List<a class="headerlink" href="#component-list" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>ESP32-S3-WROOM x1</p></li>
+<li><p>GPIO Extension Board x1</p></li>
+<li><p>830 Tie-Points Breadboard x1</p></li>
+<li><p>LED x1</p></li>
+<li><p>Resistor 220Ω x1</p></li>
+<li><p>Jumper Wire x2</p></li>
+</ul>
+<section id="component-knowledge">
+<h3>Component knowledge<a class="headerlink" href="#component-knowledge" title="Link to this heading"></a></h3>
+<section id="led">
+<h4><a class="reference internal" href="../components_Kit/component_led.html#cpn-led"><span class="std std-ref">LED</span></a><a class="headerlink" href="#led" title="Link to this heading"></a></h4>
+</section>
+<section id="resistor">
+<h4><a class="reference internal" href="../components_Kit/component_resistor.html#component-resistor"><span class="std std-ref">Resistor</span></a><a class="headerlink" href="#resistor" title="Link to this heading"></a></h4>
+</section>
+<section id="breadboard">
+<h4><a class="reference internal" href="../components_Kit/component_breadboard.html#cpn-breadboard"><span class="std std-ref">Breadboard</span></a><a class="headerlink" href="#breadboard" title="Link to this heading"></a></h4>
+</section>
+</section>
+</section>
+<section id="connect">
+<h2>Connect<a class="headerlink" href="#connect" title="Link to this heading"></a></h2>
+<p>First, disconnect all power from the ESP32-S3 WROOM. Then build the circuit
+according to the circuit and hardware diagrams. After the circuit is built and
+verified correct, connect the PC to ESP32-S3 WROOM.</p>
+<p>CAUTION: Avoid any possible short circuits (especially connecting 5V or GND, 3.3V
+and GND)! WARNING: A short circuit can cause high current in your circuit, generate
+excessive component heat and cause permanent damage to your hardware!</p>
+<img alt="../_images/1.png" src="../_images/1.png" />
+</section>
+<section id="sketch">
+<h2>Sketch<a class="headerlink" href="#sketch" title="Link to this heading"></a></h2>
+<p>According to the circuit, when the GPIO2 of ESP32-S3 WROOM output level is high,
+the LED turns ON. Conversely, when the GPIO2 ESP32-S3 WROOM output level is low,
+the LED turns OFF. Therefore, we can let GPIO2 circularly output high and low level
+to make the LED blink.
+Upload the following Sketch:
+<span class="guilabel">LAFVIN_Super_Starter_Kit_For_Esp32_S3SketchesSketch_01.1_Blink.</span>
+Before uploading the code, click “Tools”, “Board” and select “ESP32S3 Dev Module “.</p>
+<img alt="../_images/device.png" src="../_images/device.png" />
+<p>Select the serial port. Note that the computer port number of each user may be
+different. Please select the correct serial port according to your computer. Taking
+the window system as an example, my computer recognizes that the communication
+interface of the ESP32-S3-WROOM is COM3, so I select COM3.</p>
+<img alt="../_images/port1.png" src="../_images/port1.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: For macOS users, if the uploading fails, please set the baud rate to
+115200 before clicking “Upload Using Programmer”.</p>
+<img alt="../_images/speed.png" src="../_images/speed.png" />
+</div>
+<p><strong>Sketch_01.1_Blink</strong>
+Click the Upload button and it will compile and upload the Sketch to the ESP32-S3-WROOM.</p>
+<img alt="../_images/upload.png" src="../_images/upload.png" />
+<p>Wait for the Sketch upload to complete, and observe the ESP32-S3 WROOM. You can
+see that the LED on breadboard flashes cyclically.</p>
+<img alt="../_images/17.png" src="../_images/17.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="0_led.html" class="btn btn-neutral float-left" title="Chapter 0 LED" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="2_btn%26led.html" class="btn btn-neutral float-right" title="Chapter 2 Button &amp; LED" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, LAFVIN.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

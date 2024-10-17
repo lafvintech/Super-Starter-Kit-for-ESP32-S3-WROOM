@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 22 Play SD card music &mdash; Super-Starter-Kit-for-ESP32-S3-WROOM  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 23 WiFi Working Modes" href="23_wifi_working_modes.html" />
+    <link rel="prev" title="Chapter 21 Read and Write the SDcard" href="21_read_and_write_the_sdcard.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about_this_kit.html">About This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component_list.html">Component List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preparation/preparation.html">Preparation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="c_tutorial.html">C Language Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="0_led.html">Chapter 0 LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_led.html">Chapter 1 LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_btn%26led.html">Chapter 2 Button &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_led_bar.html">Chapter 3 LED Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_analog%26pwm.html">Chapter 4 Analog &amp; PWM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_rgb_led.html">Chapter 5 RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_buzzer.html">Chapter 6 Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_serial_communication.html">Chapter 7 Serial Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_ad_converter.html">Chapter 8 AD Converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_touch_sensor.html">Chapter 9 Touch Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_potentiometer.html">Chapter 10 Potentiometer &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_photoresistor.html">Chapter 11 Photoresistor &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_thermistor.html">Chapter 12 Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_joystick.html">Chapter 13 Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_74HC595%26led_bar_graph.html">Chapter 14 74HC595 &amp; LED Bar Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_74HC595%267-segment_display.html">Chapter 15 74HC595 &amp; 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_relay%26motor.html">Chapter 16 Relay &amp; Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_servo.html">Chapter 17 Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="18_lcd1602.html">Chapter 18 LCD1602</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19_ultrasonic_ranging.html">Chapter 19 Ultrasonic Ranging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20_bluetooth.html">Chapter 20 Bluetooth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_read_and_write_the_sdcard.html">Chapter 21 Read and Write the SDcard</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chapter 22 Play SD card music</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-22-1-sdmmc-music">Project 22.1 SDMMC Music</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#component-list">Component List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#component-knowledge">Component knowledge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connect">Connect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sketch">Sketch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="23_wifi_working_modes.html">Chapter 23 WiFi Working Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_tcpip.html">Chapter 24 TCP/IP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_camera_web_server.html">Chapter 25 Camera Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_camera_tcp_server.html">Chapter 26 Camera Tcp Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2.Python_Tutorial/python_tutorial.html">Python Language Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components_Kit/Components_Kit.html">Components Introduction</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Super-Starter-Kit-for-ESP32-S3-WROOM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="c_tutorial.html">C Language Tutorial</a></li>
+      <li class="breadcrumb-item active">Chapter 22 Play SD card music</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/1.C_Tutorial/22_play_sd_card_music.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chapter-22-play-sd-card-music">
+<h1>Chapter 22 Play SD card music<a class="headerlink" href="#chapter-22-play-sd-card-music" title="Link to this heading"></a></h1>
+<p>In the previous study, we have learned how to use the SD card, and then we will
+learn to play the music in the SD card.</p>
+<section id="project-22-1-sdmmc-music">
+<h2>Project 22.1 SDMMC Music<a class="headerlink" href="#project-22-1-sdmmc-music" title="Link to this heading"></a></h2>
+<p>In this project, we will read an mp3 file from an SD card, decode it through ESP
+32-S3, and use a speaker to play it.</p>
+<section id="component-list">
+<h3>Component List<a class="headerlink" href="#component-list" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>ESP32-S3-WROOM x1</p></li>
+<li><p>GPIO Extension Board x1</p></li>
+<li><p>830 Tie-Points Breadboard x1</p></li>
+<li><p>NPN transistor(S8050) x2</p></li>
+<li><p>Speaker x1</p></li>
+<li><p>Diode x1</p></li>
+<li><p>Resistor 1kΩ  x1</p></li>
+<li><p>Jumper Wire x4</p></li>
+</ul>
+</section>
+<section id="component-knowledge">
+<h3>Component knowledge<a class="headerlink" href="#component-knowledge" title="Link to this heading"></a></h3>
+<section id="speaker">
+<h4><a class="reference internal" href="../components_Kit/component_audio_speaker.html#cpn-audio-speaker"><span class="std std-ref">Speaker</span></a><a class="headerlink" href="#speaker" title="Link to this heading"></a></h4>
+</section>
+</section>
+<section id="connect">
+<h3>Connect<a class="headerlink" href="#connect" title="Link to this heading"></a></h3>
+<p>Please note that before connecting the USB cable, please put the music into the
+SD card and insert the SD card into the card slot on the back of the ESP32-S3.</p>
+<img alt="../_images/22.png" src="../_images/22.png" />
+</section>
+<section id="sketch">
+<h3>Sketch<a class="headerlink" href="#sketch" title="Link to this heading"></a></h3>
+<p><strong>How to install the library</strong>
+In this project, we will use the ESP8266Audio.zip
+library to decode the audio files in the SD card, and then output the audio signal
+through GPIO. If you have not installed this library, please follow the steps
+below to install it. Open arduino-&gt;Sketch-&gt;Include library-&gt; Add .ZIP Library.</p>
+<img alt="../_images/22-1.png" src="../_images/22-1.png" />
+<p>In the new pop-up window, select “Super_Starter_Kit_for_ESP32_S3CLibr
+ariesESP8266Audio.zip”. Then click “Open“.</p>
+<img alt="../_images/22-2.png" src="../_images/22-2.png" />
+<p><strong>Sketch_22.1_PlayMP3FromSD</strong></p>
+<p>We placed a folder called “music” in: Super_Starter_Kit_for_ESP32_S3SketchesSketch_22.1_PlayMP3FromSD User needs to copy this folder to SD card.</p>
+<img alt="../_images/22-3.png" src="../_images/22-3.png" />
+<p>Click upload.</p>
+<img alt="../_images/22-5.png" src="../_images/22-5.png" />
+<p>Compile and upload the code to the ESP32-S3 WROOM and open the serial monitor.
+ESP32-S3 takes a few seconds to initialize the program. When you see the message
+below, it means that ESP32-S3 has started parsing the mp3 in sd and started play
+ing music through Pin.</p>
+<img alt="../_images/22-4.png" src="../_images/22-4.png" />
+</section>
+<section id="code">
+<h3>Code<a class="headerlink" href="#code" title="Link to this heading"></a></h3>
+<p>The following is the program code:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Arduino.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;WiFi.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;FS.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;SD_MMC.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;AudioFileSourceSD_MMC.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;AudioFileSourceID3.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;AudioGeneratorMP3.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;AudioOutputI2SNoDAC.h&quot;</span>
+
+<span class="cp">#define SD_MMC_CMD 38 </span><span class="c1">//Please do not modify it.</span>
+<span class="cp">#define SD_MMC_CLK 39 </span><span class="c1">//Please do not modify it.</span>
+<span class="cp">#define SD_MMC_D0  40 </span><span class="c1">//Please do not modify it.</span>
+
+<span class="n">AudioGeneratorMP3</span><span class="w"> </span><span class="o">*</span><span class="n">mp3</span><span class="p">;</span>
+<span class="n">AudioFileSourceID3</span><span class="w"> </span><span class="o">*</span><span class="n">id3</span><span class="p">;</span>
+<span class="n">AudioOutputI2SNoDAC</span><span class="w"> </span><span class="o">*</span><span class="n">out</span><span class="p">;</span>
+
+<span class="n">AudioFileSourceSD_MMC</span><span class="w"> </span><span class="o">*</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+
+<span class="c1">// Called when a metadata event occurs (i.e. an ID3 tag, an ICY block, etc.</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">MDCallback</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">cbData</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">isUnicode</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">string</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">cbData</span><span class="p">;</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ID3 callback for: %s = &#39;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isUnicode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">string</span><span class="o">++</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isUnicode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">string</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;&#39;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">flush</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="n">WiFi</span><span class="p">.</span><span class="n">mode</span><span class="p">(</span><span class="n">WIFI_OFF</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="n">SD_MMC</span><span class="p">.</span><span class="n">setPins</span><span class="p">(</span><span class="n">SD_MMC_CLK</span><span class="p">,</span><span class="w"> </span><span class="n">SD_MMC_CMD</span><span class="p">,</span><span class="w"> </span><span class="n">SD_MMC_D0</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">SD_MMC</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="s">&quot;/sdcard&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="n">SDMMC_FREQ_DEFAULT</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Card Mount Failed&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Sample MP3 playback begins...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="n">audioLogger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Serial</span><span class="p">;</span>
+<span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">AudioFileSourceSD_MMC</span><span class="p">(</span><span class="s">&quot;/music/01.mp3&quot;</span><span class="p">);</span>
+<span class="n">id3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">AudioFileSourceID3</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="n">id3</span><span class="o">-&gt;</span><span class="n">RegisterMetadataCB</span><span class="p">(</span><span class="n">MDCallback</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="s">&quot;ID3TAG&quot;</span><span class="p">);</span>
+<span class="c1">//out = new AudioOutputI2S();</span>
+<span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">AudioOutputI2SNoDAC</span><span class="p">();</span>
+<span class="n">out</span><span class="o">-&gt;</span><span class="n">SetPinout</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">);</span><span class="c1">//Set the audio output pin, Only 14 were used</span>
+<span class="n">out</span><span class="o">-&gt;</span><span class="n">SetGain</span><span class="p">(</span><span class="mf">3.5</span><span class="p">);</span><span class="c1">//Setting the Volume</span>
+<span class="n">mp3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">AudioGeneratorMP3</span><span class="p">();</span>
+<span class="n">mp3</span><span class="o">-&gt;</span><span class="n">begin</span><span class="p">(</span><span class="n">id3</span><span class="p">,</span><span class="w"> </span><span class="n">out</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mp3</span><span class="o">-&gt;</span><span class="n">isRunning</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">mp3</span><span class="o">-&gt;</span><span class="n">loop</span><span class="p">())</span><span class="w"> </span><span class="n">mp3</span><span class="o">-&gt;</span><span class="n">stop</span><span class="p">();</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;MP3 done</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="21_read_and_write_the_sdcard.html" class="btn btn-neutral float-left" title="Chapter 21 Read and Write the SDcard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="23_wifi_working_modes.html" class="btn btn-neutral float-right" title="Chapter 23 WiFi Working Modes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, LAFVIN.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

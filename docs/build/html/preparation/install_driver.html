@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Driver installation &mdash; Super-Starter-Kit-for-ESP32-S3-WROOM  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="C Language Preparation" href="C_preparation.html" />
+    <link rel="prev" title="Preparation" href="preparation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about_this_kit.html">About This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component_list.html">Component List</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="preparation.html">Preparation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Driver installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-the-ch343-driver-importance">Installing the CH343 Driver (Importance)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#macos">MacOS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#programming-software">Programming Software</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#requirements">Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="C_preparation.html">C Language Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python_preparation.html">Python Language Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Notes_For_GPIO.html">Notes for GPIO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1.C_Tutorial/c_tutorial.html">C Language Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.Python_Tutorial/python_tutorial.html">Python Language Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components_Kit/Components_Kit.html">Components Introduction</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Super-Starter-Kit-for-ESP32-S3-WROOM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="preparation.html">Preparation</a></li>
+      <li class="breadcrumb-item active">Driver installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/preparation/install_driver.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="driver-installation">
+<h1>Driver installation<a class="headerlink" href="#driver-installation" title="Link to this heading"></a></h1>
+<section id="installing-the-ch343-driver-importance">
+<h2>Installing the CH343 Driver (Importance)<a class="headerlink" href="#installing-the-ch343-driver-importance" title="Link to this heading"></a></h2>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h3>
+<p><strong>Check whether CH343 has been installed</strong></p>
+<p>ESP32-S3 WROOM uses CH343 to download codes. So before using it, we need to
+install CH343 driver in our computers.</p>
+<ol class="arabic simple">
+<li><p>Connect your computer and ESP32-S3 WROOM with a USB cable.</p></li>
+</ol>
+<figure class="align-center">
+<img alt="../_images/esp32_4.png" src="../_images/esp32_4.png" />
+</figure>
+<p>1. Turn to the main interface of your computer, select “This PC” and right-click
+to select “Manage”.</p>
+<figure class="align-center">
+<img alt="../_images/driver_5.png" src="../_images/driver_5.png" />
+</figure>
+<p>3. Click “Device Manager”. If your computer has installed CH343, you can see“USB
+-Enhances-SERIAL CH343 (COMx)”. And you can click here to move to the next step.</p>
+<figure class="align-center">
+<img alt="../_images/driver_6.png" src="../_images/driver_6.png" />
+</figure>
+<p><strong>Installing CH343</strong></p>
+<p>1. First, download CH343 driver, click <a class="reference external" href="http://www.wch-ic.com/search?t=all&amp;q=ch343">HERE</a> to download the appropriate one based on your operating system.</p>
+<figure class="align-center">
+<img alt="../_images/driver_7.png" src="../_images/driver_7.png" />
+</figure>
+<p>If you would not like to download the installation package, you can open
+“Lafvin_Super_Starter_Kit_for_ESP32_S3/CH343”, we have prepared the installation package.</p>
+<figure class="align-center">
+<img alt="../_images/driver_8.png" src="../_images/driver_8.png" />
+</figure>
+<ol class="arabic simple">
+<li><p>Open the folder “Lafvin_Super_Starter_Kit_for_ESP32_S3/CH343/Windows/”</p></li>
+</ol>
+<figure class="align-center">
+<img alt="../_images/driver_9.png" src="../_images/driver_9.png" />
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Double click “CH343SER.EXE”.</p></li>
+</ol>
+<figure class="align-center">
+<img alt="../_images/driver_10.png" src="../_images/driver_10.png" />
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Click “INSTALL” and wait for the installation to complete.</p></li>
+</ol>
+<figure class="align-center">
+<img alt="../_images/driver_11.png" src="../_images/driver_11.png" />
+</figure>
+<ol class="arabic simple" start="5">
+<li><p>Install successfully. Close all interfaces.</p></li>
+</ol>
+<figure class="align-center">
+<img alt="../_images/driver_12.png" src="../_images/driver_12.png" />
+</figure>
+<p>6. When ESP32-S3 WROOM is connected to computer, select “This PC”, right-click
+to select “Manage” and click “Device Manager” in the newly pop-up dialog box,
+and you can see the following interface.</p>
+<figure class="align-center">
+<img alt="../_images/driver_6.png" src="../_images/driver_6.png" />
+</figure>
+<ol class="arabic simple" start="7">
+<li><p>So far, CH343 has been installed successfully. Close all dialog boxes.</p></li>
+</ol>
+</section>
+<section id="macos">
+<h3>MacOS<a class="headerlink" href="#macos" title="Link to this heading"></a></h3>
+<p>1. First, download CH343 driver, click <a class="reference external" href="http://www.wch-ic.com/search?t=all&amp;q=ch343">HERE</a> to download the appropriate one based on your operating system.</p>
+<figure class="align-center">
+<img alt="../_images/driver_7.png" src="../_images/driver_7.png" />
+</figure>
+<p>If you would not like to download the installation package, you can open
+“Lafvin_Super_Starter_Kit_for_ESP32_S3/CH343”, we have prepared the installation package.
+Second, open the folder “Lafvin_Super_Starter_Kit_for_ESP32_S3/CH343/MAC/”</p>
+<figure class="align-center">
+<img alt="../_images/driver_13.png" src="../_images/driver_13.png" />
+</figure>
+<p>Third, click Continue.</p>
+<figure class="align-center">
+<img alt="../_images/driver_14.png" src="../_images/driver_14.png" />
+</figure>
+<p>Fourth, click Install.</p>
+<figure class="align-center">
+<img alt="../_images/driver_15.png" src="../_images/driver_15.png" />
+</figure>
+<p>Then, waiting Finsh.</p>
+<figure class="align-center">
+<img alt="../_images/driver_16.png" src="../_images/driver_16.png" />
+</figure>
+<p>Finally, restart your PC.</p>
+<figure class="align-center">
+<img alt="../_images/driver_17.png" src="../_images/driver_17.png" />
+</figure>
+<p>If you still haven’t installed the CH340 by following the steps above, you can
+view readme.pdf to install it.</p>
+<figure class="align-center">
+<img alt="../_images/driver_18.png" src="../_images/driver_18.png" />
+</figure>
+</section>
+</section>
+<section id="programming-software">
+<h2>Programming Software<a class="headerlink" href="#programming-software" title="Link to this heading"></a></h2>
+<p>The Arduino IDE, known as Arduino Integrated Development Environment, provides
+all the software support needed to complete an Arduino project. It is a programming
+software specifically designed for Arduino, provided by the Arduino team, that
+allows us to write programs and upload them to the Arduino board.</p>
+<p>The Arduino IDE 2.0 is an open-source project. It is a big step from its sturdy
+predecessor, Arduino IDE 1.x, and comes with revamped UI, improved board &amp; library
+manager, debugger, autocomplete feature and much more.</p>
+<p>In this tutorial, we will show how to download and install the Arduino IDE 2.0
+on your Windows, Mac, or Linux computer.</p>
+<section id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Windows - Win 10 and newer, 64 bits</p></li>
+<li><p>Linux - 64 bits</p></li>
+<li><p>Mac OS Intel - Version 10.14: “Mojave” or newer, 64 bits</p></li>
+<li><p>Mac OS Apple Silicon - Version 11: “Big Sur” or newer, 64 bits</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="preparation.html" class="btn btn-neutral float-left" title="Preparation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="C_preparation.html" class="btn btn-neutral float-right" title="C Language Preparation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, LAFVIN.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

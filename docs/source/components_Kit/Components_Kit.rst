@@ -1,16 +1,11 @@
 Components Introduction
-=========================================
+========================
 
-.. image:: img/list.jpg
-    :align: center
-    :width: 600
-
-Below is the introduction to each component, which contains the operating principle of the component and the corresponding projects.
+Below is the introduction to each component, which contains the operating principle of the component.
 
 .. toctree::
     :maxdepth: 1
 
-    component_UNO_R4
     component_breadboard
     component_wires
     component_resistor
@@ -24,9 +19,5 @@ Below is the introduction to each component, which contains the operating princi
     component_thermistor
     component_tilt_switch
     component_audio_speaker
-    component_relay
     Components_joystick_module
-    component_pir
-    component_humiture_sensor
-    component_oled
 

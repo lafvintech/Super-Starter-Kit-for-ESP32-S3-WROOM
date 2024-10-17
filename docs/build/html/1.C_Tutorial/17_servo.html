@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 17 Servo &mdash; Super-Starter-Kit-for-ESP32-S3-WROOM  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 18 LCD1602" href="18_lcd1602.html" />
+    <link rel="prev" title="Chapter 16 Relay &amp; Motor" href="16_relay%26motor.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about_this_kit.html">About This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component_list.html">Component List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preparation/preparation.html">Preparation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="c_tutorial.html">C Language Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="0_led.html">Chapter 0 LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_led.html">Chapter 1 LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_btn%26led.html">Chapter 2 Button &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_led_bar.html">Chapter 3 LED Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_analog%26pwm.html">Chapter 4 Analog &amp; PWM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_rgb_led.html">Chapter 5 RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_buzzer.html">Chapter 6 Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_serial_communication.html">Chapter 7 Serial Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_ad_converter.html">Chapter 8 AD Converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_touch_sensor.html">Chapter 9 Touch Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_potentiometer.html">Chapter 10 Potentiometer &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_photoresistor.html">Chapter 11 Photoresistor &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_thermistor.html">Chapter 12 Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_joystick.html">Chapter 13 Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_74HC595%26led_bar_graph.html">Chapter 14 74HC595 &amp; LED Bar Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_74HC595%267-segment_display.html">Chapter 15 74HC595 &amp; 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_relay%26motor.html">Chapter 16 Relay &amp; Motor</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chapter 17 Servo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-17-1-servo-sweep">Project 17.1 Servo Sweep</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#component-list">Component List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connect">Connect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sketch">Sketch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#project-17-2-servo-knop">Project 17.2 Servo Knop</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Component List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Connect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Sketch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="18_lcd1602.html">Chapter 18 LCD1602</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19_ultrasonic_ranging.html">Chapter 19 Ultrasonic Ranging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20_bluetooth.html">Chapter 20 Bluetooth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_read_and_write_the_sdcard.html">Chapter 21 Read and Write the SDcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_play_sd_card_music.html">Chapter 22 Play SD card music</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_wifi_working_modes.html">Chapter 23 WiFi Working Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_tcpip.html">Chapter 24 TCP/IP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_camera_web_server.html">Chapter 25 Camera Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_camera_tcp_server.html">Chapter 26 Camera Tcp Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2.Python_Tutorial/python_tutorial.html">Python Language Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components_Kit/Components_Kit.html">Components Introduction</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Super-Starter-Kit-for-ESP32-S3-WROOM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="c_tutorial.html">C Language Tutorial</a></li>
+      <li class="breadcrumb-item active">Chapter 17 Servo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/1.C_Tutorial/17_servo.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chapter-17-servo">
+<h1>Chapter 17 Servo<a class="headerlink" href="#chapter-17-servo" title="Link to this heading"></a></h1>
+<p>Previously, we learned how to control the speed and rotational direction of a mo
+tor. In this chapter, we will learn about servos which are a rotary actuator ty
+pe motor that can be controlled to rotate to specific angles.</p>
+<section id="project-17-1-servo-sweep">
+<h2>Project 17.1 Servo Sweep<a class="headerlink" href="#project-17-1-servo-sweep" title="Link to this heading"></a></h2>
+<p>First, we need to learn how to make a servo rotate.</p>
+<section id="component-list">
+<h3>Component List<a class="headerlink" href="#component-list" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>ESP32-S3-WROOM x1</p></li>
+<li><p>GPIO Extension Board x1</p></li>
+<li><p>830 Tie-Points Breadboard x1</p></li>
+<li><p>Servo x1</p></li>
+<li><p>Jumper Wire x5</p></li>
+</ul>
+</section>
+<section id="connect">
+<h3>Connect<a class="headerlink" href="#connect" title="Link to this heading"></a></h3>
+<p>Use caution when supplying power to the servo, it should be 5V. Make sure you do
+not make any errors when connecting the servo to the power supply.</p>
+<img alt="../_images/17.1.png" src="../_images/17.1.png" />
+</section>
+<section id="sketch">
+<h3>Sketch<a class="headerlink" href="#sketch" title="Link to this heading"></a></h3>
+<p><strong>Sketch_17.1_Servo_Sweep</strong></p>
+<img alt="../_images/17.11.png" src="../_images/17.11.png" />
+<p>Compile and upload the code to ESP32-S3 WROOM, the servo will rotate from 0 degree
+s to 180 degrees and then reverse the direction to make it rotate from 180 degrees
+to 0 degrees and repeat these actions in an endless loop.</p>
+<img alt="../_images/17.12.png" src="../_images/17.12.png" />
+</section>
+<section id="code">
+<h3>Code<a class="headerlink" href="#code" title="Link to this heading"></a></h3>
+<p>The following is the program code:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#define SERVO_PIN 21  </span><span class="c1">//define the pwm pin</span>
+<span class="cp">#define SERVO_CHN 0   </span><span class="c1">//define the pwm channel</span>
+<span class="cp">#define SERVO_FRQ 50  </span><span class="c1">//define the pwm frequency</span>
+<span class="cp">#define SERVO_BIT 12  </span><span class="c1">//define the pwm precision</span>
+
+<span class="c1">// Function prototypes</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">servo_set_pin</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pin</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">servo_set_angle</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">angle</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="n">servo_set_pin</span><span class="p">(</span><span class="n">SERVO_PIN</span><span class="p">);</span><span class="w">  </span><span class="c1">// Initialize the servo pin</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">180</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">//make light fade in</span>
+<span class="w">    </span><span class="n">servo_set_angle</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">  </span><span class="c1">// Set servo angle from 0 to 179 degrees</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">  </span><span class="c1">// Short delay for smooth movement</span>
+<span class="p">}</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">180</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">//make light fade out</span>
+<span class="w">    </span><span class="n">servo_set_angle</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">  </span><span class="c1">// Set servo angle from 180 to 1 degrees</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">  </span><span class="c1">// Short delay for smooth movement</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">servo_set_pin</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pin</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// Configure PWM for servo control</span>
+<span class="n">ledcAttachChannel</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">SERVO_FRQ</span><span class="p">,</span><span class="w"> </span><span class="n">SERVO_BIT</span><span class="p">,</span><span class="w"> </span><span class="n">SERVO_CHN</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">servo_set_angle</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">angle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">angle</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w">  </span><span class="c1">// Ensure angle is within valid range</span>
+<span class="kt">long</span><span class="w"> </span><span class="n">pwm_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span><span class="w"> </span><span class="mi">512</span><span class="p">);</span><span class="w">  </span><span class="c1">// Map angle to PWM value</span>
+<span class="n">ledcWrite</span><span class="p">(</span><span class="n">SERVO_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">pwm_value</span><span class="p">);</span><span class="w">  </span><span class="c1">// Set PWM duty cycle</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="project-17-2-servo-knop">
+<h2>Project 17.2 Servo Knop<a class="headerlink" href="#project-17-2-servo-knop" title="Link to this heading"></a></h2>
+<p>Use a potentiometer to control the servo motor to rotate at any angle.</p>
+<section id="id1">
+<h3>Component List<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>ESP32-S3-WROOM x1</p></li>
+<li><p>GPIO Extension Board x1</p></li>
+<li><p>830 Tie-Points Breadboard x1</p></li>
+<li><p>Servo x1</p></li>
+<li><p>Potentiometer(10k) x1</p></li>
+<li><p>Jumper Wire x6</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Connect<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>Use caution when supplying power to the servo, it should be 5V. Make sure you do
+not make any errors when connecting the servo to the power supply.</p>
+<img alt="../_images/17.2.png" src="../_images/17.2.png" />
+</section>
+<section id="id3">
+<h3>Sketch<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p><strong>Sketch_17.2_Servo_Sweep</strong></p>
+<img alt="../_images/17.21.png" src="../_images/17.21.png" />
+<p>Compile and upload the code to ESP32-S3 WROOM, twist the potentiometer back and
+forth, and the servo motor rotates accordingly.</p>
+<img alt="../_images/17.22.png" src="../_images/17.22.png" />
+</section>
+<section id="id4">
+<h3>Code<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>The following is the program code:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#define SERVO_PIN 21  </span><span class="c1">//define the pwm pin</span>
+<span class="cp">#define SERVO_CHN 0   </span><span class="c1">//define the pwm channel</span>
+<span class="cp">#define SERVO_FRQ 50  </span><span class="c1">//define the pwm frequency</span>
+<span class="cp">#define SERVO_BIT 12  </span><span class="c1">//define the pwm precision</span>
+<span class="cp">#define ADC_PIN   14  </span><span class="c1">//define the adc pin</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">servo_set_pin</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pin</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">servo_set_angle</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">angle</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="n">servo_set_pin</span><span class="p">(</span><span class="n">SERVO_PIN</span><span class="p">);</span><span class="w">  </span><span class="c1">// Initialize the servo pin</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span><span class="w">  </span><span class="c1">// Start serial communication at 115200 baud</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// read the value of the potentiometer (value between 0 and 4095)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">potVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">ADC_PIN</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;potVal_1: %d</span><span class="se">\t</span><span class="s">&quot;</span><span class="p">,</span><span class="n">potVal</span><span class="p">);</span><span class="w">  </span><span class="c1">// Print the raw potentiometer value</span>
+<span class="c1">// scale it to use it with the servo (value between 0 and 180)</span>
+<span class="n">potVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">potVal</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">4095</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">);</span><span class="w">   </span><span class="c1">// Map potentiometer value to servo angle range</span>
+
+<span class="c1">// set the servo position according to the scaled value</span>
+<span class="n">servo_set_angle</span><span class="p">(</span><span class="n">potVal</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;potVal_2: %d</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">potVal</span><span class="p">);</span><span class="w">  </span><span class="c1">// Print the mapped servo angle</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span><span class="c1">// wait for the servo to get there</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">servo_set_pin</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pin</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// Configure PWM for servo control</span>
+<span class="n">ledcAttachChannel</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">SERVO_FRQ</span><span class="p">,</span><span class="w"> </span><span class="n">SERVO_BIT</span><span class="p">,</span><span class="w"> </span><span class="n">SERVO_CHN</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">servo_set_angle</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">angle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">angle</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w">  </span><span class="c1">// Ensure angle is within valid range</span>
+<span class="kt">long</span><span class="w"> </span><span class="n">pwm_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span><span class="w"> </span><span class="mi">512</span><span class="p">);</span><span class="w">  </span><span class="c1">// Map angle to PWM value</span>
+<span class="n">ledcWrite</span><span class="p">(</span><span class="n">SERVO_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">pwm_value</span><span class="p">);</span><span class="w">  </span><span class="c1">// Set PWM duty cycle</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this experiment, we obtain the ADC value of the potentiometer and store it in
+potVal. Use map function to convert it into corresponding angle value and we can
+control the motor to rotate to a specified angle, and print the value via serial.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="16_relay%26motor.html" class="btn btn-neutral float-left" title="Chapter 16 Relay &amp; Motor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="18_lcd1602.html" class="btn btn-neutral float-right" title="Chapter 18 LCD1602" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, LAFVIN.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

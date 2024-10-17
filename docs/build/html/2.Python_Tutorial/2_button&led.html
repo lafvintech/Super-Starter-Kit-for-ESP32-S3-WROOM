@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 2 Button &amp; LED &mdash; Super-Starter-Kit-for-ESP32-S3-WROOM  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 3 LED Bar" href="3_led_bar.html" />
+    <link rel="prev" title="Chapter 1 LED (Important)" href="1_led.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about_this_kit.html">About This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component_list.html">Component List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preparation/preparation.html">Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1.C_Tutorial/c_tutorial.html">C Language Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="python_tutorial.html">Python Language Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1_led.html">Chapter 1 LED (Important)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chapter 2 Button &amp; LED</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-2-1-button-led">Project 2.1 Button &amp; LED</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#component-list">Component List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#component-knowledge">Component knowledge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connect">Connect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sketch">Sketch</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#project-2-2-mini-table-lamp">Project 2.2 MINI table lamp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#debounce-for-push-button">Debounce for Push Button</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="3_led_bar.html">Chapter 3 LED Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_analog%26pwm.html">Chapter 4 Analog &amp; PWM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_rgb_led.html">Chapter 5 RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_buzzer.html">Chapter 6 Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_serial_communication.html">Chapter 7 Serial Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_ad_converter.html">Chapter 8 AD Converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_potentiometer%26led.html">Chapter 9 Potentiometer &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_photoresistor%26led.html">Chapter 10 Photoresistor &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_thermistor.html">Chapter 11 Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_joystick.html">Chapter 12 Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_74hc595%26led_bar_graph.html">Chapter 13 74HC595 &amp; LED Bar Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_74hc595%267-segment_display.html">Chapter 14 74HC595 &amp; 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_relay%26motor.html">Chapter 15 Relay &amp; Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_servo.html">Chapter 16 Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_lcd1602.html">Chapter 17 LCD1602</a></li>
+<li class="toctree-l2"><a class="reference internal" href="18_ultrasonic_ranging.html">Chapter 18 Ultrasonic Ranging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19_bluetooth.html">Chapter 19 Bluetooth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20_wifi_working_modes.html">Chapter 20 WiFi Working Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_tcpip.html">Chapter 21 TCP/IP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../components_Kit/Components_Kit.html">Components Introduction</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Super-Starter-Kit-for-ESP32-S3-WROOM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="python_tutorial.html">Python Language Tutorial</a></li>
+      <li class="breadcrumb-item active">Chapter 2 Button &amp; LED</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/2.Python_Tutorial/2_button&amp;led.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chapter-2-button-led">
+<h1>Chapter 2 Button &amp; LED<a class="headerlink" href="#chapter-2-button-led" title="Link to this heading"></a></h1>
+<p>Usually, there are three essential parts in a complete automatic control device:
+INPUT, OUTPUT, and CONTROL. In last section, the LED module was the output part
+and ESP32-S3 was the control part. In practical applications, we not only make
+LEDs flash, but also make a device sense the surrounding environment, receive
+instructions and then take the appropriate action such as LEDs light up, make a
+buzzer turn ON and so on.</p>
+<img alt="../_images/23.png" src="../_images/23.png" />
+<p>Next, we will build a simple control system to control a LED through a push butt
+on switch.</p>
+<section id="project-2-1-button-led">
+<h2>Project 2.1 Button &amp; LED<a class="headerlink" href="#project-2-1-button-led" title="Link to this heading"></a></h2>
+<p>In the project, we will control the LED state through a Push Button Switch. When
+the button is pressed, our LED will turn ON, and when it is released, the LED will
+turn OFF.</p>
+<section id="component-list">
+<h3>Component List<a class="headerlink" href="#component-list" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>ESP32-S3-WROOM x1</p></li>
+<li><p>GPIO Extension Board x1</p></li>
+<li><p>830 Tie-Points Breadboard x1</p></li>
+<li><p>LED x1</p></li>
+<li><p>Resistor 220Ω x1</p></li>
+<li><p>Resistor 10kΩ x2</p></li>
+<li><p>Jumper Wire x4</p></li>
+<li><p>Button x1</p></li>
+</ul>
+</section>
+<section id="component-knowledge">
+<h3>Component knowledge<a class="headerlink" href="#component-knowledge" title="Link to this heading"></a></h3>
+<section id="button">
+<h4><a class="reference internal" href="../components_Kit/component_button.html#cpn-button"><span class="std std-ref">Button</span></a><a class="headerlink" href="#button" title="Link to this heading"></a></h4>
+</section>
+</section>
+<section id="connect">
+<h3>Connect<a class="headerlink" href="#connect" title="Link to this heading"></a></h3>
+<img alt="../_images/24.png" src="../_images/24.png" />
+</section>
+<section id="sketch">
+<h3>Sketch<a class="headerlink" href="#sketch" title="Link to this heading"></a></h3>
+<p>This project is designed to learn to control an LED with a push button switch.
+First, we need to read the state of the switch and then decide whether the LED
+is turned on or not based on it. Move the program folder “Super_Starter
+_Kit_for_ESP32_S3/Python/Python_Codes” to disk(D) in advance with the path of “
+D:/Micropython_Codes”. Open “Thonny”，click “This computer” &gt;&gt; “D:” &gt;&gt; “Micropython
+_Codes” &gt;&gt; “02.1_ButtonAndLed” and double click “ButtonAndLed.py”.</p>
+<p><strong>02.1_ButtonAndLed</strong></p>
+<img alt="../_images/2.12.png" src="../_images/2.12.png" />
+<p>Click “Run current script” shown in the box of the above illustration, press the
+push button switch, LED turns ON; release the switch, LED turns OFF.</p>
+<img alt="../_images/2.13.png" src="../_images/2.13.png" />
+<p><strong>Upload Code to ESP32S3</strong>
+As shown in the following illustration, right-click file 02.1_ButtonAndLed and
+select “Upload to /” to upload code to ESP32S3.</p>
+<img alt="../_images/2.1-1.png" src="../_images/2.1-1.png" />
+<p>Upload boot.py in the same way.</p>
+<img alt="../_images/2.1-2.png" src="../_images/2.1-2.png" />
+<p>The following is the program code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+
+<span class="c1">#create button object from pin13,Set Pin13 to Input</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">PULL_UP</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">():</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#Set led turn on</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1">#Set led turn off</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="project-2-2-mini-table-lamp">
+<h2>Project 2.2 MINI table lamp<a class="headerlink" href="#project-2-2-mini-table-lamp" title="Link to this heading"></a></h2>
+<p>We will also use a push button switch, LED and ESP32-S3 to make a MINI table lamp
+but this will function differently: Press the button, the LED will turn ON, and
+pressing the button again, the LED turns OFF. The ON switch action is no longer
+momentary (like a door bell) but remains ON without needing to continually press
+on the Button Switch. First, let us learn something about the push button switch.</p>
+<section id="debounce-for-push-button">
+<h3>Debounce for Push Button<a class="headerlink" href="#debounce-for-push-button" title="Link to this heading"></a></h3>
+<p>The moment when a push button switch is pressed, it will not change from one state
+to another state immediately. Due to tiny mechanical vibrations, there will be a
+short period of continuous buffeting before it completely reaches another state
+too fast for humans to detect but not for computer microcontrollers. The same is
+true when the push button switch is released. This unwanted phenomenon is known
+as “bounce”.</p>
+<img alt="../_images/2.23.png" src="../_images/2.23.png" />
+<p>Therefore, if we can directly detect the state of the push button switch, there
+are multiple pressing and releasing actions in one pressing cycle. This buffeting
+will mislead the high-speed operation of the microcontroller to cause many false
+decisions. Therefore, we need to eliminate the impact of buffeting. Our solution:
+to judge the state of the button multiple times. Only when the button state is
+stable (consistent) over a period of time, can it indicate that the button is
+actually in the ON state (being pressed). This project needs the same components
+and circuits as we used in the previous section.</p>
+</section>
+<section id="code">
+<h3>Code<a class="headerlink" href="#code" title="Link to this heading"></a></h3>
+<p><strong>02.2_Tablelamp</strong>
+Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
+odes” to disk(D) in advance with the path of “D:/Micropython_Codes”. Open “Thonn
+y”，click “This computer” &gt;&gt; “D:” &gt;&gt; “Micropython_Codes” &gt;&gt; “02.2_TableLamp”and dou
+ble click “TableLamp.py”.</p>
+<img alt="../_images/2.24.png" src="../_images/2.24.png" />
+<p>Click “Run current script” shown in the box of the above illustration, press the
+push button switch, LED turns ON; press it again, LED turns OFF.</p>
+<img alt="../_images/2.25.png" src="../_images/2.25.png" />
+<p><strong>Upload code to ESP32S3</strong>
+As shown in the following illustration, right-click file 02.2_TableLamp and
+select “Upload to /” to upload code to ESP32S3.</p>
+<img alt="../_images/2.2-1.png" src="../_images/2.2-1.png" />
+<p>Upload boot.py in the same way.</p>
+<img alt="../_images/2.2-2.png" src="../_images/2.2-2.png" />
+<p>Press ESP32S3’s reset key, and then push the button switch, LED turns ON; Push
+the button again, LED turns OFF.</p>
+<img alt="../_images/2.25.png" src="../_images/2.25.png" />
+<p>The following is the program code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">PULL_UP</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">reverseGPIO</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">():</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">():</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">():</span>
+        <span class="n">reverseGPIO</span><span class="p">()</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">():</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="1_led.html" class="btn btn-neutral float-left" title="Chapter 1 LED (Important)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="3_led_bar.html" class="btn btn-neutral float-right" title="Chapter 3 LED Bar" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, LAFVIN.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

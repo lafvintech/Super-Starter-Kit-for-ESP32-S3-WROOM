@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Potentiometer &mdash; Super-Starter-Kit-for-ESP32-S3-WROOM  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Photoresistor" href="component_photoresistor.html" />
+    <link rel="prev" title="Button" href="component_button.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about_this_kit.html">About This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component_list.html">Component List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preparation/preparation.html">Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1.C_Tutorial/c_tutorial.html">C Language Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.Python_Tutorial/python_tutorial.html">Python Language Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Components_Kit.html">Components Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="component_breadboard.html">Breadboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_wires.html">Jumper Wires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_resistor.html">Resistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_led.html">LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_rgb_led.html">RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_transistor.html">Transistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_buzzer.html">Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_button.html">Button</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Potentiometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_photoresistor.html">Photoresistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_thermistor.html">Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_tilt_switch.html">Tilt Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_audio_speaker.html">Audio Module and Speaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Components_joystick_module.html">Joystick Module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Super-Starter-Kit-for-ESP32-S3-WROOM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Components_Kit.html">Components Introduction</a></li>
+      <li class="breadcrumb-item active">Potentiometer</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/components_Kit/component_potentiometer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="potentiometer">
+<span id="cpn-potentiometer"></span><h1>Potentiometer<a class="headerlink" href="#potentiometer" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="../_images/potentiometer.png"><img alt="../_images/potentiometer.png" class="align-center" src="../_images/potentiometer.png" style="width: 150px;" /></a>
+<p>A potentiometer is another type of resistance component featuring three terminals, with an adjustable resistance value that follows a specific pattern of variation.</p>
+<p>Regardless of their different shapes, sizes, and resistance values, all potentiometers share the following characteristics:</p>
+<ol class="arabic simple">
+<li><p>They possess three terminals (or connection points).</p></li>
+<li><p>They include a knob, screw, or slider that can be adjusted to change the resistance between the middle terminal and either of the outer terminals.</p></li>
+<li><p>As the knob, screw, or slider is moved, the resistance between the middle terminal and either outer terminal can vary from 0 Ω to the potentiometer’s maximum resistance.</p></li>
+</ol>
+<p>Below is the circuit symbol typically used to represent a potentiometer.</p>
+<a class="reference internal image-reference" href="../_images/potentiometer_symbol.png"><img alt="../_images/potentiometer_symbol.png" class="align-center" src="../_images/potentiometer_symbol.png" style="width: 400px;" /></a>
+<p>The functions of a potentiometer in a circuit include:</p>
+<ol class="arabic">
+<li><p><strong>Serving as a Voltage Divider</strong></p>
+<blockquote>
+<div><p>A potentiometer acts as a continuously adjustable resistor. When you adjust the shaft or sliding handle, the movable contact slides along the resistor. This allows the output voltage to vary depending on the applied voltage and the position of the movable arm. This function is commonly used to derive a specific voltage from a larger range.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Serving as a Rheostat</strong></p>
+<blockquote>
+<div><p>When used as a rheostat, the potentiometer can be connected to the circuit by using the middle pin and one of the other two pins. This configuration enables you to obtain a smoothly and continuously variable resistance value within the range of the moving contact’s travel. This function is often used for adjusting current or resistance in a circuit.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Serving as a Current Controller</strong></p>
+<blockquote>
+<div><p>For a potentiometer to function as a current controller, the sliding contact terminal must be used as one of the output terminals. This setup allows for the regulation of the current flowing through the circuit by adjusting the position of the sliding contact.</p>
+<p>If you want to know more about potentiometer, refer to: <a class="reference external" href="https://en.wikipedia.org/wiki/Potentiometer">Potentiometer Wiki</a></p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="component_button.html" class="btn btn-neutral float-left" title="Button" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="component_photoresistor.html" class="btn btn-neutral float-right" title="Photoresistor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, LAFVIN.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

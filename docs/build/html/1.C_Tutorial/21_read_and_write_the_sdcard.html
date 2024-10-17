@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 21 Read and Write the SDcard &mdash; Super-Starter-Kit-for-ESP32-S3-WROOM  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 22 Play SD card music" href="22_play_sd_card_music.html" />
+    <link rel="prev" title="Chapter 20 Bluetooth" href="20_bluetooth.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about_this_kit.html">About This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component_list.html">Component List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preparation/preparation.html">Preparation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="c_tutorial.html">C Language Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="0_led.html">Chapter 0 LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_led.html">Chapter 1 LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_btn%26led.html">Chapter 2 Button &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_led_bar.html">Chapter 3 LED Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_analog%26pwm.html">Chapter 4 Analog &amp; PWM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_rgb_led.html">Chapter 5 RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_buzzer.html">Chapter 6 Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_serial_communication.html">Chapter 7 Serial Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_ad_converter.html">Chapter 8 AD Converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_touch_sensor.html">Chapter 9 Touch Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_potentiometer.html">Chapter 10 Potentiometer &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_photoresistor.html">Chapter 11 Photoresistor &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_thermistor.html">Chapter 12 Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_joystick.html">Chapter 13 Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_74HC595%26led_bar_graph.html">Chapter 14 74HC595 &amp; LED Bar Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_74HC595%267-segment_display.html">Chapter 15 74HC595 &amp; 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_relay%26motor.html">Chapter 16 Relay &amp; Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_servo.html">Chapter 17 Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="18_lcd1602.html">Chapter 18 LCD1602</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19_ultrasonic_ranging.html">Chapter 19 Ultrasonic Ranging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20_bluetooth.html">Chapter 20 Bluetooth</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chapter 21 Read and Write the SDcard</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-21-1-sdmmc-test">Project 21.1 SDMMC Test</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#component-list">Component List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#format-sd-card">Format SD card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connect">Connect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sketch">Sketch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="22_play_sd_card_music.html">Chapter 22 Play SD card music</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_wifi_working_modes.html">Chapter 23 WiFi Working Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_tcpip.html">Chapter 24 TCP/IP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_camera_web_server.html">Chapter 25 Camera Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_camera_tcp_server.html">Chapter 26 Camera Tcp Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2.Python_Tutorial/python_tutorial.html">Python Language Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components_Kit/Components_Kit.html">Components Introduction</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Super-Starter-Kit-for-ESP32-S3-WROOM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="c_tutorial.html">C Language Tutorial</a></li>
+      <li class="breadcrumb-item active">Chapter 21 Read and Write the SDcard</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/1.C_Tutorial/21_read_and_write_the_sdcard.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chapter-21-read-and-write-the-sdcard">
+<h1>Chapter 21 Read and Write the SDcard<a class="headerlink" href="#chapter-21-read-and-write-the-sdcard" title="Link to this heading"></a></h1>
+<p>An SDcard slot is integrated on the back of the ESP32-S3 WROOM. In this chapter
+we learn how to use ESP32S3 to read and write SDcard.</p>
+<section id="project-21-1-sdmmc-test">
+<h2>Project 21.1 SDMMC Test<a class="headerlink" href="#project-21-1-sdmmc-test" title="Link to this heading"></a></h2>
+<section id="component-list">
+<h3>Component List<a class="headerlink" href="#component-list" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>ESP32-S3-WROOM x1</p></li>
+<li><p>Type C USB Cable x1</p></li>
+<li><p>Memory Card x1</p></li>
+</ul>
+</section>
+<section id="format-sd-card">
+<h3>Format SD card<a class="headerlink" href="#format-sd-card" title="Link to this heading"></a></h3>
+<p>Before starting the tutorial, we need to create a drive letter for the blank SD
+card and format it. This step requires a card reader and SD card. Please prepare
+them in advance. Below we will guide you to do it on different computer systems.
+You can choose the guide that matches your computer.
+<strong>Windows</strong>
+Insert the SD card into the card reader, then insert the card reader into the
+computer. In the Windows search box, enter “Disk Management” and select “Create
+and format hard disk partitions”.</p>
+<img alt="../_images/format1.png" src="../_images/format1.png" />
+<p>In the new pop-up window, find an unallocated volume close to 1G in size.</p>
+<img alt="../_images/format2.png" src="../_images/format2.png" />
+<p>Click to select the volume, right-click and select “New Simple Volume”.</p>
+<img alt="../_images/format3.png" src="../_images/format3.png" />
+<p>Click Next.</p>
+<img alt="../_images/format4.png" src="../_images/format4.png" />
+<img alt="../_images/format5.png" src="../_images/format5.png" />
+<p>You can choose the drive letter on the right, or you can choose the default. By
+default, just click Next.</p>
+<img alt="../_images/format6.png" src="../_images/format6.png" />
+<p>File system is FAT(or FAT32). The Allocation unit size is 16K, and the Volume
+label can be set to any name. After setting, click Next.</p>
+<img alt="../_images/format7.png" src="../_images/format7.png" />
+<p>Click Finish. Wait for the SD card initialization to complete.</p>
+<img alt="../_images/format8.png" src="../_images/format8.png" />
+<p>At this point, you can see the SD card in This PC.</p>
+<img alt="../_images/format9.png" src="../_images/format9.png" />
+<p><strong>MAC</strong>
+Insert the SD card into the card reader, then insert the card reader into the
+computer. Some computers will prompt the following information, please click to
+ignore it.</p>
+<img alt="../_images/format_mac1.png" src="../_images/format_mac1.png" />
+<p>Find “Disk Utility” in the MAC system and click to open it.</p>
+<img alt="../_images/format_mac2.png" src="../_images/format_mac2.png" />
+<p>Select “Generic MassStorageClass Media”, note that its size is about 1G. Please
+do not choose wrong item. Click “Erase”.</p>
+<img alt="../_images/format_mac3.png" src="../_images/format_mac3.png" />
+<p>Select the configuration as shown in the figure below, and then click “Erase”.</p>
+<img alt="../_images/format_mac4.png" src="../_images/format_mac4.png" />
+<p>Wait for the formatting to complete. When finished, it will look like the picture
+below. At this point, you can see a new disk on the desktop named “SD”.</p>
+<img alt="../_images/format_mac5.png" src="../_images/format_mac5.png" />
+</section>
+<section id="connect">
+<h3>Connect<a class="headerlink" href="#connect" title="Link to this heading"></a></h3>
+<p>Connect ESP32-S3 to the computer using the USB cable.</p>
+<img alt="../_images/connect1.png" src="../_images/connect1.png" />
+<p>Before connecting the USB cable, insert the SD card into the SD card slot on the
+back of the ESP32-S3.</p>
+</section>
+<section id="sketch">
+<h3>Sketch<a class="headerlink" href="#sketch" title="Link to this heading"></a></h3>
+<p><strong>Sketch_21.1_SDMMC_Test</strong></p>
+<img alt="../_images/21.1.png" src="../_images/21.1.png" />
+<p>Compile and upload the code to ESP32-S3-WROOM, open the serial monitor, and press
+the RST button on the board.
+You can see the printout as shown below.</p>
+<img alt="../_images/21.11.png" src="../_images/21.11.png" />
+</section>
+<section id="code">
+<h3>Code<a class="headerlink" href="#code" title="Link to this heading"></a></h3>
+<p>The following is the program code:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sd_read_write.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;SD_MMC.h&quot;</span>
+
+<span class="cp">#define SD_MMC_CMD 38 </span><span class="c1">//Please do not modify it.</span>
+<span class="cp">#define SD_MMC_CLK 39 </span><span class="c1">//Please do not modify it.</span>
+<span class="cp">#define SD_MMC_D0  40 </span><span class="c1">//Please do not modify it.</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span><span class="w">  </span><span class="c1">// Initialize serial communication</span>
+<span class="w">    </span><span class="n">SD_MMC</span><span class="p">.</span><span class="n">setPins</span><span class="p">(</span><span class="n">SD_MMC_CLK</span><span class="p">,</span><span class="w"> </span><span class="n">SD_MMC_CMD</span><span class="p">,</span><span class="w"> </span><span class="n">SD_MMC_D0</span><span class="p">);</span><span class="w">  </span><span class="c1">// Set SD card pins</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">SD_MMC</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="s">&quot;/sdcard&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="n">SDMMC_FREQ_DEFAULT</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// Mount SD card</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Card Mount Failed&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">cardType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SD_MMC</span><span class="p">.</span><span class="n">cardType</span><span class="p">();</span><span class="w">  </span><span class="c1">// Get SD card type</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">cardType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">CARD_NONE</span><span class="p">){</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;No SD_MMC card attached&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Print SD card type</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;SD_MMC Card Type: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">cardType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">CARD_MMC</span><span class="p">){</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;MMC&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">cardType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">CARD_SD</span><span class="p">){</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;SDSC&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">cardType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">CARD_SDHC</span><span class="p">){</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;SDHC&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;UNKNOWN&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Print SD card size</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">cardSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SD_MMC</span><span class="p">.</span><span class="n">cardSize</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1024</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;SD_MMC Card Size: %lluMB</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cardSize</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">listDir</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// List root directory contents</span>
+
+<span class="w">    </span><span class="n">createDir</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/mydir&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Create a directory</span>
+<span class="w">    </span><span class="n">listDir</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// List root directory again</span>
+
+<span class="w">    </span><span class="n">removeDir</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/mydir&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Remove the created directory</span>
+<span class="w">    </span><span class="n">listDir</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// List root directory with depth 2</span>
+
+<span class="w">    </span><span class="n">writeFile</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/hello.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello &quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Write to a file</span>
+<span class="w">    </span><span class="n">appendFile</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/hello.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Append to the file</span>
+<span class="w">    </span><span class="n">readFile</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/hello.txt&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Read the file</span>
+
+<span class="w">    </span><span class="n">deleteFile</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/foo.txt&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Delete a file (if it exists)</span>
+<span class="w">    </span><span class="n">renameFile</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/hello.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/foo.txt&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Rename a file</span>
+<span class="w">    </span><span class="n">readFile</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/foo.txt&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Read the renamed file</span>
+
+<span class="w">    </span><span class="n">testFileIO</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/test.txt&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Perform I/O test on a file</span>
+
+<span class="w">    </span><span class="c1">// Print total and used space on the SD card</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Total space: %lluMB</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SD_MMC</span><span class="p">.</span><span class="n">totalBytes</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1024</span><span class="p">));</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Used space: %lluMB</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SD_MMC</span><span class="p">.</span><span class="n">usedBytes</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1024</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span><span class="w">  </span><span class="c1">// Wait for 10 seconds</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="20_bluetooth.html" class="btn btn-neutral float-left" title="Chapter 20 Bluetooth" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="22_play_sd_card_music.html" class="btn btn-neutral float-right" title="Chapter 22 Play SD card music" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, LAFVIN.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

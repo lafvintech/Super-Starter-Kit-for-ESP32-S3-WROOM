@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 25 Camera Web Server &mdash; Super-Starter-Kit-for-ESP32-S3-WROOM  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 26 Camera Tcp Server" href="26_camera_tcp_server.html" />
+    <link rel="prev" title="Chapter 24 TCP/IP" href="24_tcpip.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about_this_kit.html">About This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component_list.html">Component List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preparation/preparation.html">Preparation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="c_tutorial.html">C Language Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="0_led.html">Chapter 0 LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_led.html">Chapter 1 LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_btn%26led.html">Chapter 2 Button &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_led_bar.html">Chapter 3 LED Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_analog%26pwm.html">Chapter 4 Analog &amp; PWM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_rgb_led.html">Chapter 5 RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_buzzer.html">Chapter 6 Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_serial_communication.html">Chapter 7 Serial Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_ad_converter.html">Chapter 8 AD Converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_touch_sensor.html">Chapter 9 Touch Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_potentiometer.html">Chapter 10 Potentiometer &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_photoresistor.html">Chapter 11 Photoresistor &amp; LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_thermistor.html">Chapter 12 Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_joystick.html">Chapter 13 Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_74HC595%26led_bar_graph.html">Chapter 14 74HC595 &amp; LED Bar Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_74HC595%267-segment_display.html">Chapter 15 74HC595 &amp; 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_relay%26motor.html">Chapter 16 Relay &amp; Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_servo.html">Chapter 17 Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="18_lcd1602.html">Chapter 18 LCD1602</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19_ultrasonic_ranging.html">Chapter 19 Ultrasonic Ranging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20_bluetooth.html">Chapter 20 Bluetooth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_read_and_write_the_sdcard.html">Chapter 21 Read and Write the SDcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_play_sd_card_music.html">Chapter 22 Play SD card music</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_wifi_working_modes.html">Chapter 23 WiFi Working Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_tcpip.html">Chapter 24 TCP/IP</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chapter 25 Camera Web Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-25-1-camera-web-server">Project 25.1 Camera Web Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#connect">Connect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sketch">Sketch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#project-25-2-video-web-server">Project 25.2 Video Web Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#component-list">Component List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Connect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Sketch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#project-25-3-camera-and-sdcard">Project 25.3 Camera and SDcard</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Component List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Connect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Sketch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="26_camera_tcp_server.html">Chapter 26 Camera Tcp Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2.Python_Tutorial/python_tutorial.html">Python Language Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components_Kit/Components_Kit.html">Components Introduction</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Super-Starter-Kit-for-ESP32-S3-WROOM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="c_tutorial.html">C Language Tutorial</a></li>
+      <li class="breadcrumb-item active">Chapter 25 Camera Web Server</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/1.C_Tutorial/25_camera_web_server.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chapter-25-camera-web-server">
+<h1>Chapter 25 Camera Web Server<a class="headerlink" href="#chapter-25-camera-web-server" title="Link to this heading"></a></h1>
+<section id="project-25-1-camera-web-server">
+<h2>Project 25.1 Camera Web Server<a class="headerlink" href="#project-25-1-camera-web-server" title="Link to this heading"></a></h2>
+<p>Connect ESP32-S3 using USB and check its IP address through serial monitor. Use
+web page to access IP address to obtain video and image data.</p>
+<section id="connect">
+<h3>Connect<a class="headerlink" href="#connect" title="Link to this heading"></a></h3>
+<p>Connect ESP32-S3 to the computer using the USB cable.</p>
+<img alt="../_images/connect1.png" src="../_images/connect1.png" />
+</section>
+<section id="sketch">
+<h3>Sketch<a class="headerlink" href="#sketch" title="Link to this heading"></a></h3>
+<p><strong>Sketch_25.1_As_CameraWebServer</strong></p>
+<img alt="../_images/25.1.png" src="../_images/25.1.png" />
+<p>Before running the program, please modify your router’s name and password in the
+box shown in the illustration above to make sure that your Sketch can compile and
+work successfully.</p>
+<p>Compile and upload codes to ESP32-S3, open the serial monitor and set the baud
+rate to 115200, and the serial monitor will print out a network link address.</p>
+<img alt="../_images/25.11.png" src="../_images/25.11.png" />
+<p>If your ESP32-S3 has been in the process of connecting to router, but the inform
+ation above has not been printed out, please re-check whether the router name and
+password have been entered correctly and press the reset key on ESP32-S3 WROOM to
+wait for a successful connection prompt.</p>
+<p>Open a web browser, enter the IP address printed by the serial monitor in the
+address bar, and access it. Taking the Google browser as an example, here’s what
+the browser prints out after successful access to ESP32S3’s IP.</p>
+<img alt="../_images/25.1-1.png" src="../_images/25.1-1.png" />
+<p>Click on Start Stream. The effect is shown in the image below.</p>
+<img alt="../_images/25.1-2.png" src="../_images/25.1-2.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If sketch compilation fails due to ESP32-S3 support package, follow the steps of the image to open the CameraWebServer. This sketch is the same as described in the tutorial above.</p>
+</div>
+<img alt="../_images/25.1-3.png" src="../_images/25.1-3.png" />
+</section>
+<section id="code">
+<h3>Code<a class="headerlink" href="#code" title="Link to this heading"></a></h3>
+<p>The following is the program code.You need include other code files in the same
+folder when write your own code.</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_camera.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;WiFi.h&gt;</span>
+
+<span class="c1">// ===================</span>
+<span class="c1">// Select camera model</span>
+<span class="c1">// ===================</span>
+<span class="c1">//#define CAMERA_MODEL_WROVER_KIT // Has PSRAM</span>
+<span class="c1">//#define CAMERA_MODEL_ESP_EYE // Has PSRAM</span>
+<span class="cp">#define CAMERA_MODEL_ESP32S3_EYE </span><span class="c1">// Has PSRAM</span>
+<span class="c1">//#define CAMERA_MODEL_M5STACK_PSRAM // Has PSRAM</span>
+<span class="c1">//#define CAMERA_MODEL_M5STACK_V2_PSRAM // M5Camera version B Has PSRAM</span>
+<span class="c1">//#define CAMERA_MODEL_M5STACK_WIDE // Has PSRAM</span>
+<span class="c1">//#define CAMERA_MODEL_M5STACK_ESP32CAM // No PSRAM</span>
+<span class="c1">//#define CAMERA_MODEL_M5STACK_UNITCAM // No PSRAM</span>
+<span class="c1">//#define CAMERA_MODEL_AI_THINKER // Has PSRAM</span>
+<span class="c1">//#define CAMERA_MODEL_TTGO_T_JOURNAL // No PSRAM</span>
+<span class="c1">// ** Espressif Internal Boards **</span>
+<span class="c1">//#define CAMERA_MODEL_ESP32_CAM_BOARD</span>
+<span class="c1">//#define CAMERA_MODEL_ESP32S2_CAM_BOARD</span>
+<span class="c1">//#define CAMERA_MODEL_ESP32S3_CAM_LCD</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;camera_pins.h&quot;</span>
+
+<span class="c1">// ===========================</span>
+<span class="c1">// Enter your WiFi credentials</span>
+<span class="c1">// ===========================</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ssid</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;********&quot;</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;********&quot;</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">startCameraServer</span><span class="p">();</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">setDebugOutput</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">();</span>
+
+<span class="n">camera_config_t</span><span class="w"> </span><span class="n">config</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">ledc_channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LEDC_CHANNEL_0</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">ledc_timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LEDC_TIMER_0</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y2_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y3_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y4_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y5_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y6_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y7_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y8_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y9_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_xclk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">XCLK_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_pclk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PCLK_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_vsync</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VSYNC_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HREF_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_sccb_sda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SIOD_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_sccb_scl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SIOC_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_pwdn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PWDN_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RESET_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">xclk_freq_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20000000</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">frame_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FRAMESIZE_UXGA</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pixel_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PIXFORMAT_JPEG</span><span class="p">;</span><span class="w"> </span><span class="c1">// for streaming</span>
+<span class="n">config</span><span class="p">.</span><span class="n">grab_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CAMERA_GRAB_WHEN_EMPTY</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">fb_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CAMERA_FB_IN_PSRAM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">jpeg_quality</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">fb_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// if PSRAM IC present, init with UXGA resolution and higher JPEG quality</span>
+<span class="c1">// for larger pre-allocated frame buffer.</span>
+<span class="k">if</span><span class="p">(</span><span class="n">psramFound</span><span class="p">()){</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">jpeg_quality</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">fb_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">grab_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CAMERA_GRAB_LATEST</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Limit the frame size when PSRAM is not available</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">frame_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FRAMESIZE_SVGA</span><span class="p">;</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">fb_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CAMERA_FB_IN_DRAM</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// camera init</span>
+<span class="n">esp_err_t</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">esp_camera_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">config</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ESP_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Camera init failed with error 0x%x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">sensor_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">esp_camera_sensor_get</span><span class="p">();</span>
+<span class="c1">// initial sensors are flipped vertically and colors are a bit saturated</span>
+<span class="n">s</span><span class="o">-&gt;</span><span class="n">set_vflip</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// flip it back</span>
+<span class="n">s</span><span class="o">-&gt;</span><span class="n">set_brightness</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// up the brightness just a bit</span>
+<span class="n">s</span><span class="o">-&gt;</span><span class="n">set_saturation</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// lower the saturation</span>
+
+<span class="n">WiFi</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<span class="n">WiFi</span><span class="p">.</span><span class="n">setSleep</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WL_CONNECTED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">STA</span><span class="p">.</span><span class="n">hasIP</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi connected&quot;</span><span class="p">);</span>
+
+<span class="n">startCameraServer</span><span class="p">();</span>
+
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Camera Ready! Use &#39;http://&quot;</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">localIP</span><span class="p">());</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;&#39; to connect&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// Do nothing. Everything is done in another task by the web server</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="project-25-2-video-web-server">
+<h2>Project 25.2 Video Web Server<a class="headerlink" href="#project-25-2-video-web-server" title="Link to this heading"></a></h2>
+<p>Connect to ESP32-S3 using USB and view its IP address through a serial monitor.
+Access IP addresses through web pages to obtain real-time video data.</p>
+<section id="component-list">
+<h3>Component List<a class="headerlink" href="#component-list" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>ESP32-S3-WROOM x1</p></li>
+<li><p>Type C USB Cable x1</p></li>
+<li><p>Memory Card x1</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>Connect<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Connect ESP32-S3 to the computer using the USB cable.</p>
+<img alt="../_images/connect1.png" src="../_images/connect1.png" />
+</section>
+<section id="id2">
+<h3>Sketch<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p><strong>Sketch_25.2_As_VideoWebServer</strong></p>
+<img alt="../_images/25.2.png" src="../_images/25.2.png" />
+<p>Before running the program, please modify your router’s name and password in the
+box shown in the illustration above to make sure that your Sketch can compile and
+work successfully.</p>
+<p>Compile and upload codes to ESP32-S3, open the serial monitor and set the baud
+rate to 115200, and the serial monitor will print out a network link address.</p>
+<img alt="../_images/25.21.png" src="../_images/25.21.png" />
+<p>If your ESP32-S3 has been in the process of connecting to router, but the inform
+ation above has not been printed out, please re-check whether the router name and
+password have been entered correctly and press the reset key on ESP32-S3 WROOM to
+wait for a successful connection prompt.</p>
+<p>Open a web browser, enter the IP address printed by the serial monitor in the
+address bar, and access it. Taking the Google browser as an example, here’s what
+the browser prints out after successful access to ESP32S3’s IP.</p>
+<p>The effect is shown in the image below.</p>
+<img alt="../_images/25.2-1.png" src="../_images/25.2-1.png" />
+</section>
+<section id="id3">
+<h3>Code<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p>The following is the main program code. You need include other code files in the same folder when write your own code.</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_camera.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;WiFi.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sd_read_write.h&quot;</span>
+
+<span class="c1">// Select camera model</span>
+<span class="cp">#define CAMERA_MODEL_ESP32S3_EYE </span><span class="c1">// Has PSRAM</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;camera_pins.h&quot;</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ssid</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;********&quot;</span><span class="p">;</span><span class="w">   </span><span class="c1">//input your wifi name</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;********&quot;</span><span class="p">;</span><span class="w">   </span><span class="c1">//input your wifi passwords</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">cameraInit</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">startCameraServer</span><span class="p">();</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">setDebugOutput</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">();</span>
+
+<span class="n">cameraInit</span><span class="p">();</span>
+<span class="n">sdmmcInit</span><span class="p">();</span>
+<span class="n">removeDir</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/video&quot;</span><span class="p">);</span>
+<span class="n">createDir</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/video&quot;</span><span class="p">);</span>
+
+<span class="n">WiFi</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WL_CONNECTED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WiFi connected&quot;</span><span class="p">);</span>
+
+<span class="n">startCameraServer</span><span class="p">();</span>
+
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Camera Ready! Use &#39;http://&quot;</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">localIP</span><span class="p">());</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;&#39; to connect&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// put your main code here, to run repeatedly:</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">cameraInit</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+<span class="n">camera_config_t</span><span class="w"> </span><span class="n">config</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">ledc_channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LEDC_CHANNEL_0</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">ledc_timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LEDC_TIMER_0</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y2_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y3_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y4_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y5_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y6_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y7_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y8_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y9_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_xclk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">XCLK_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_pclk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PCLK_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_vsync</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VSYNC_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HREF_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_sccb_sda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SIOD_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_sccb_scl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SIOC_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_pwdn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PWDN_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RESET_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">xclk_freq_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20000000</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">frame_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FRAMESIZE_UXGA</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pixel_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PIXFORMAT_JPEG</span><span class="p">;</span><span class="w"> </span><span class="c1">// for streaming</span>
+<span class="n">config</span><span class="p">.</span><span class="n">grab_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CAMERA_GRAB_WHEN_EMPTY</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">fb_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CAMERA_FB_IN_PSRAM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">jpeg_quality</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">fb_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// if PSRAM IC present, init with UXGA resolution and higher JPEG quality</span>
+<span class="c1">// for larger pre-allocated frame buffer.</span>
+<span class="k">if</span><span class="p">(</span><span class="n">psramFound</span><span class="p">()){</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">jpeg_quality</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">fb_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">grab_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CAMERA_GRAB_LATEST</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Limit the frame size when PSRAM is not available</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">frame_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FRAMESIZE_SVGA</span><span class="p">;</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">fb_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CAMERA_FB_IN_DRAM</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// camera init</span>
+<span class="n">esp_err_t</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">esp_camera_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">config</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ESP_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Camera init failed with error 0x%x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">sensor_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">esp_camera_sensor_get</span><span class="p">();</span>
+<span class="c1">// initial sensors are flipped vertically and colors are a bit saturated</span>
+<span class="n">s</span><span class="o">-&gt;</span><span class="n">set_vflip</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// flip it back</span>
+<span class="n">s</span><span class="o">-&gt;</span><span class="n">set_brightness</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// up the brightness just a bit</span>
+<span class="n">s</span><span class="o">-&gt;</span><span class="n">set_saturation</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// lower the saturation</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="project-25-3-camera-and-sdcard">
+<h2>Project 25.3 Camera and SDcard<a class="headerlink" href="#project-25-3-camera-and-sdcard" title="Link to this heading"></a></h2>
+<p>In this chapter, we continue to use the camera and SD card. We will use the onboa
+rd button as the shutter. When the button is pressed, the ESP32-S3 takes a photo
+and stores the photo in the SD folder.</p>
+<section id="id4">
+<h3>Component List<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>ESP32-S3-WROOM x1</p></li>
+<li><p>Type C USB Cable x1</p></li>
+<li><p>Memory Card x1</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>Connect<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>Connect ESP32-S3 to the computer using the USB cable.</p>
+<img alt="../_images/connect1.png" src="../_images/connect1.png" />
+</section>
+<section id="id6">
+<h3>Sketch<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<p>Make sure your project folder contains the following images. These headers files make
+sure this program works</p>
+<img alt="../_images/25.3-1.png" src="../_images/25.3-1.png" />
+<p><strong>Sketch_25.3_Camera_SDcard</strong></p>
+<img alt="../_images/25.3.png" src="../_images/25.3.png" />
+<p>Compile and upload the code to the ESP32-S3. If your camera is not installed pro
+perly, causing the camera to fail to initialize, or you have not inserted the SD
+card into the ESP32-S3 in advance, the on-board colored lights will turn on red
+as a reminder. If all is well, the onboard colored light will light up green. When
+the onboard BOOT button is pressed, the ESP32-S3 will capture the current camera
+image and save it in the “Camera” folder of the SD card. At the same time, the
+onboard LED lights up blue, and returns to green after taking a photo.</p>
+<p>As shown in the image below, after uploading the code to the ESP32-S3, the ESP32
+-S3 will automatically create a folder named “camera” in the SD card. Every time
+the BOOT button is pressed, the on-board colored light turns on blue, and ESP32-S3
+collects a photo information and stores it in the “camera” folder. Press the but
+ton once to take a photo. When we press the RST button to reset the ESP32-S3, we
+can see that there are some photo files in the SD card folder. These photos you
+can read directly through the card reader.</p>
+<img alt="../_images/25.31.png" src="../_images/25.31.png" />
+</section>
+<section id="id7">
+<h3>Code<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>The following is the main program code. You need include other code files in the
+same folder when write your own code.</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_camera.h&quot;</span>
+<span class="cp">#define CAMERA_MODEL_ESP32S3_EYE</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;camera_pins.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ws2812.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sd_read_write.h&quot;</span>
+
+<span class="cp">#define BUTTON_PIN  0  </span><span class="c1">// Define the pin for the button</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">setDebugOutput</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">();</span>
+<span class="n">pinMode</span><span class="p">(</span><span class="n">BUTTON_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<span class="n">ws2812Init</span><span class="p">();</span><span class="w">  </span><span class="c1">// Initialize WS2812 LED</span>
+
+<span class="c1">// Initialize SD card</span>
+<span class="n">sdmmcInit</span><span class="p">();</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">SD_MMC</span><span class="p">.</span><span class="n">begin</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// Check if SD card is successfully mounted</span>
+<span class="w">    </span><span class="n">ws2812SetColor</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">  </span><span class="c1">// SD card initialization failed, set red light</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;SD card initialization failed&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w">  </span><span class="c1">// If SD card is necessary, you can return here</span>
+<span class="p">}</span>
+
+<span class="n">createDir</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/camera&quot;</span><span class="p">);</span>
+<span class="n">listDir</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/camera&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cameraSetup</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ws2812SetColor</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// Camera setup successful, set green light</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ws2812SetColor</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">  </span><span class="c1">// Camera setup failed, set red light</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Camera setup failed&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="k">if</span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">BUTTON_PIN</span><span class="p">)</span><span class="o">==</span><span class="n">LOW</span><span class="p">){</span><span class="w">  </span><span class="c1">// Check if button is pressed</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span><span class="w">  </span><span class="c1">// Debounce delay</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">BUTTON_PIN</span><span class="p">)</span><span class="o">==</span><span class="n">LOW</span><span class="p">){</span>
+<span class="w">        </span><span class="n">ws2812SetColor</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w">  </span><span class="c1">// Set LED color to indicate photo capture in progress</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">BUTTON_PIN</span><span class="p">)</span><span class="o">==</span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="c1">// Wait for button release</span>
+<span class="w">    </span><span class="n">camera_fb_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="n">fb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">esp_camera_fb_get</span><span class="p">();</span><span class="w">  </span><span class="c1">// Capture a photo</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fb</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">photo_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readFileNum</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/camera&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Get the next file number</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">photo_index</span><span class="o">!=</span><span class="mi">-1</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/camera/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">photo_index</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="s">&quot;.jpg&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">writejpg</span><span class="p">(</span><span class="n">SD_MMC</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">fb</span><span class="o">-&gt;</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">fb</span><span class="o">-&gt;</span><span class="n">len</span><span class="p">);</span><span class="w">  </span><span class="c1">// Save the photo to SD card</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">esp_camera_fb_return</span><span class="p">(</span><span class="n">fb</span><span class="p">);</span><span class="w">  </span><span class="c1">// Return the frame buffer to be reused</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Camera capture failed.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">ws2812SetColor</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// Set LED color back to indicate ready state</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">cameraSetup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">camera_config_t</span><span class="w"> </span><span class="n">config</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">ledc_channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LEDC_CHANNEL_0</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">ledc_timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LEDC_TIMER_0</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y2_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y3_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y4_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y5_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y6_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y7_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y8_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_d7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y9_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_xclk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">XCLK_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_pclk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PCLK_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_vsync</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VSYNC_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HREF_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_sccb_sda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SIOD_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_sccb_scl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SIOC_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_pwdn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PWDN_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pin_reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RESET_GPIO_NUM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">xclk_freq_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20000000</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">frame_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FRAMESIZE_UXGA</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">pixel_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PIXFORMAT_JPEG</span><span class="p">;</span><span class="w"> </span><span class="c1">// for streaming</span>
+<span class="n">config</span><span class="p">.</span><span class="n">grab_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CAMERA_GRAB_WHEN_EMPTY</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">fb_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CAMERA_FB_IN_PSRAM</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">jpeg_quality</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="n">fb_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// if PSRAM IC present, init with UXGA resolution and higher JPEG quality</span>
+<span class="c1">// for larger pre-allocated frame buffer.</span>
+<span class="k">if</span><span class="p">(</span><span class="n">psramFound</span><span class="p">()){</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">jpeg_quality</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">fb_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">grab_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CAMERA_GRAB_LATEST</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Limit the frame size when PSRAM is not available</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">frame_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FRAMESIZE_SVGA</span><span class="p">;</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">fb_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CAMERA_FB_IN_DRAM</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// camera init</span>
+<span class="n">esp_err_t</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">esp_camera_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">config</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ESP_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Camera init failed with error 0x%x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">sensor_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">esp_camera_sensor_get</span><span class="p">();</span>
+<span class="c1">// initial sensors are flipped vertically and colors are a bit saturated</span>
+<span class="n">s</span><span class="o">-&gt;</span><span class="n">set_vflip</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// flip it back</span>
+<span class="n">s</span><span class="o">-&gt;</span><span class="n">set_brightness</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// up the brightness just a bit</span>
+<span class="n">s</span><span class="o">-&gt;</span><span class="n">set_saturation</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// lower the saturation</span>
+
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Camera configuration complete!&quot;</span><span class="p">);</span>
+<span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="24_tcpip.html" class="btn btn-neutral float-left" title="Chapter 24 TCP/IP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="26_camera_tcp_server.html" class="btn btn-neutral float-right" title="Chapter 26 Camera Tcp Server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, LAFVIN.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
