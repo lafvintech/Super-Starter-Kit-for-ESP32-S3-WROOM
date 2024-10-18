@@ -84,7 +84,7 @@ Second, click on the symbol behind "Additional Boards Manager URLs"
 
 .. image:: img/C_preparation/evn_2.png
 
-Third, fill in https://raw.githubusercontent.com/espressif/arduino-esp32/ghpages/package_esp32_index.json 
+Third, fill in **https://raw.githubusercontent.com/espressif/arduino-esp32/ghpages/package_esp32_index.json**
 in the new window, click OK, and click OK on the Preferences window again.
 
 .. image:: img/C_preparation/evn_3.png
