@@ -4,6 +4,7 @@ C Language Tutorial
 .. toctree::
     :maxdepth: 1
     
+    C_preparation
     0_led
     1_led
     2_btn&led
