@@ -30,8 +30,7 @@ and their functions under the corresponding configuration.
 
 If you have any difficulties or questions with this tutorial or toolkit, feel free 
 to ask for our quick and free technical support through :guilabel:`tech_edu_service@outlook.com` at 
-any time. or check: `<https://www.espressif.com/sites/default/files/documentation
-/esp32-s3-wroom-1_wroom1u_datasheet_en.pdf>`_
+any time. or check: `<https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom1u_datasheet_en.pdf>`_
 
 PSRAM Pin
 ---------------

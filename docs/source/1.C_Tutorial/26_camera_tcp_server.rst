@@ -19,7 +19,7 @@ Sketch
 First, you need to download the RaspPICar APP installation package from this 
 address and manually install it on your Android phone.
 
-`RaspPICar App <https://dropbox.com/xxxxxxxxxxx>`_
+`RaspPICar App <https://www.dropbox.com/scl/fo/vbwll6vgk9h5bo036g45q/AHH2STGDT-9w2qvV967ypI8?rlkey=u094s4bloaymovt0k4tscrr9i&e=1&st=eb22cjfn&dl=0>`_
 
 Then, when you open RaspPICar on your phone, this interface will be displayed.
 
