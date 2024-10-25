@@ -89,7 +89,7 @@ in the new window, click OK, and click OK on the Preferences window again.
 
 .. image:: img/C_preparation/evn_3.png
 
-Fourth, click "Boards Manager". Enter “esp32” in Boards manager and select 2.0.5，
+Fourth, click "Boards Manager". Enter “esp32” in Boards manager and select 3.0.4，
 Then click “INSTALL”.
 
 .. image:: img/C_preparation/evn_4.png
