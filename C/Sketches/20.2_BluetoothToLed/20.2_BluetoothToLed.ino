@@ -29,7 +29,7 @@ class MyServerCallbacks : public BLEServerCallbacks {
 // Callback class for BLE characteristic events
 class MyCallbacks : public BLECharacteristicCallbacks {
   void onWrite(BLECharacteristic *pCharacteristic) {
-    String rxValue = pCharacteristic->getValue();
+    String rxValue = String(pCharacteristic->getValue().c_str());
     if (rxValue.length() > 0) {
       for (int i = 0; i < 20; i++) {
         rxload[i] = 0;
