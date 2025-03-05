@@ -93,10 +93,12 @@ void setup() {
     delay(500);
     Serial.print(".");
   }
+  /*
   while (WiFi.STA.hasIP() != true) {
     Serial.print(".");
     delay(500);
   }
+  */
   Serial.println("");
   Serial.println("WiFi connected");
 
