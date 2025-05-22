@@ -7,8 +7,8 @@
 
 #include "camera_pins.h"
 
-const char* ssid     = "2A804";   //input your wifi name
-const char* password = "la1234567890";   //input your wifi passwords
+const char* ssid     = "your_ssid";   //input your wifi name
+const char* password = "your_password";   //input your wifi passwords
 
 void cameraInit(void);
 void startCameraServer();
