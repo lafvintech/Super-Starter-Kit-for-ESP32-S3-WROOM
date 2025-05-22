@@ -13,20 +13,19 @@
 void setup() {
   // Configure LED pin for PWM output
   // Parameters: pin, frequency, resolution, channel
-  ledcAttachPin(PIN_LED, CHN);
-  ledcSetup(CHN, FRQ, PWM_BIT);
+  ledcAttachChannel(PIN_LED, FRQ, PWM_BIT, CHN);  //attach the led pin to pwm channel
 }
 
 void loop() {
   // Fade the LED in (gradually increase brightness)
   for (int i = 0; i < 255; i++) {
-    ledcWrite(CHN, i);  // Set PWM duty cycle
+    ledcWrite(PIN_LED, i);  // Set PWM duty cycle
     delay(10);          // Small delay for visible effect
   }
 
   // Fade the LED out (gradually decrease brightness)
   for (int i = 255; i > -1; i--) {
-    ledcWrite(CHN, i);  // Set PWM duty cycle
+    ledcWrite(PIN_LED, i);  // Set PWM duty cycle
     delay(10);          // Small delay for visible effect
   }
 }
