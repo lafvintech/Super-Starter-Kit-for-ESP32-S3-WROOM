@@ -44,23 +44,36 @@ The following is the program code:
 
 .. code-block:: C
 
-    #define PIN_LED   2     //define the led pin
-    #define CHN       0     //define the pwm channel
-    #define FRQ       1000  //define the pwm frequency
-    #define PWM_BIT   8     //define the pwm precision
+    // Define the LED pin number
+    #define PIN_LED   2
+
+    // Define the PWM channel number
+    #define CHN       0
+
+    // Define the PWM frequency in Hz
+    #define FRQ       1000
+
+    // Define the PWM resolution (8 bits = 256 levels)
+    #define PWM_BIT   8
+
     void setup() {
+    // Configure LED pin for PWM output
+    // Parameters: pin, frequency, resolution, channel
     ledcAttachChannel(PIN_LED, FRQ, PWM_BIT, CHN);  //attach the led pin to pwm channel
     }
 
     void loop() {
-    for (int i = 0; i < 255; i++) { //make light fade in
-        ledcWrite(PIN_LED, i);
-        delay(10);
+    // Fade the LED in (gradually increase brightness)
+    for (int i = 0; i < 255; i++) {
+        ledcWrite(PIN_LED, i);  // Set PWM duty cycle
+        delay(10);          // Small delay for visible effect
     }
-    for (int i = 255; i > -1; i--) {  //make light fade out
-        ledcWrite(PIN_LED, i);
-        delay(10);
-        }
+
+    // Fade the LED out (gradually decrease brightness)
+    for (int i = 255; i > -1; i--) {
+        ledcWrite(PIN_LED, i);  // Set PWM duty cycle
+        delay(10);          // Small delay for visible effect
+    }
     }
 
 Project 4.2 Meteor Flowing Light
