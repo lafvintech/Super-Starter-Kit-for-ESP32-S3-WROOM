@@ -30,9 +30,8 @@ process is repeated to achieve the “movements” of flowing water.
 
 **03.1_FlowingLight**
 
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes” to 
-disk(D) in advance with the path of “D:/Micropython_Codes”. Open “Thonny
-”，click :file:`This computer/D:/Micropython_Codes/03.1_FlowingLight` and double click “FlowingLight.py”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to 
+disk(D) in advance with the path of “D:/Micropython_Codes”. Open “Thonny”，click :file:`This computer/D:/Micropython_Codes/03.1_FlowingLight` and double click “FlowingLight.py”.
 
 .. image:: img/software/3.1.png
 
