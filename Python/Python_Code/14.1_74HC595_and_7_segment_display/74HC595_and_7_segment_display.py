@@ -12,7 +12,3 @@ try:
             time.sleep_ms(500)
 except:
     pass
-
-
-
-

@@ -12,9 +12,3 @@ yVal.width(ADC.WIDTH_12BIT)
 while True:
   print("X,Y:",xVal.read(),",",yVal.read())
   time.sleep(1)
-
-  
-  
-  
-  
-  

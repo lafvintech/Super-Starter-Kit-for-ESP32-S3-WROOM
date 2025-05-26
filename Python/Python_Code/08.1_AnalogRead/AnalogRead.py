@@ -13,5 +13,3 @@ try:
         time.sleep_ms(100)
 except:
     pass
-
-

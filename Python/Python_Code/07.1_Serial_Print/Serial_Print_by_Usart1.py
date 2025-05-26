@@ -10,3 +10,4 @@ while True:
     myUsart.write(a)
     myUsart.write(" s\r\n")
     time.sleep(1)
+    

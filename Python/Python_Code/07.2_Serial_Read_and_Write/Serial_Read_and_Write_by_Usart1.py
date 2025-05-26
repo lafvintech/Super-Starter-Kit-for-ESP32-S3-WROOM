@@ -6,7 +6,7 @@ usart_flag=0
 myUsart = UART(1, baudrate=115200, bits=8, parity=0, rx=5, tx=2, timeout=10) 
 myUsart.write(str("\r\nESP32S3 initialization completed!\r\n")+\
       str("Please input some characters,\r\n")+\
-      str("select \"Newline\" below and click send button. \r\n"))
+      str("Press Enter, then input the content after inputstring, and press Enter again to send."))
 
 while True:
     if myUsart.any():
