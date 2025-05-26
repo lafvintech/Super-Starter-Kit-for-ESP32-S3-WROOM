@@ -100,6 +100,9 @@ Sketch
 Compile and upload the code to ESP32-S3-WROOM, open the serial monitor, and press 
 the RST button on the board.
 You can see the printout as shown below.
+The program will eventually add two text files to the sd card. You can open them 
+with a card reader. There will be "Hello World!" text in foo.txt
+
 
 .. image:: img/phenomenon/21.1.png
 

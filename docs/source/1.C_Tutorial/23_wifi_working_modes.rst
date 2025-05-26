@@ -35,6 +35,8 @@ ws:
 
 .. image:: img/phenomenon/23.1.png
 
+It will connect to your router and obtain the ip address.
+
 Code
 ^^^^^^
 The following is the program code:

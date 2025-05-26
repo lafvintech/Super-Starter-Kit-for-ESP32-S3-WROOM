@@ -31,8 +31,8 @@ Install ControlP5.
 
 .. image:: img/other/processing0.png
 
-Open the “Super_Starter_Kit_for_ESP32_S3\\Sketches\\Sketches\\Sketch_24.1_
-WiFiClient\\sketchWiFi\\Processing_wifi.pde”, and click "Run".
+Open the "Super_Starter_Kit_for_ESP32_S3\\Sketches\\Sketches\\Sketch_24.1_
+WiFiClient\\sketchWiFi\\Processing_wifi.pde", and click "Run".
 
 .. image:: img/other/processing4.png
 
@@ -48,26 +48,28 @@ When sketchWiFi selects TCP CLIENT mode, the LOCAL IP and LOCAL PORT of sketchWi
 Fi need to be changed according to the IP address and port number printed by the 
 serial monitor.
 
-**Mode selection**: select Server mode/Client mode. 
+- **Mode selection**: select Server mode/Client mode. 
 
-**IP address**: In server mode, this option does not need to be filled in, and the computer will automatically obtain 
-the IP address. In client mode, fill in the remote IP address to be connected.
+- **IP address**: In server mode, this option does not need to be filled in, and the computer will automatically obtain 
+  the IP address. In client mode, fill in the remote IP address to be connected.
 
-**Port number**: In server mode, fill in a port number for client devices to make an 
-access connection. In client mode, fill in port number given by the Server devices 
-to make an access connection.
+- **Port number**: In server mode, fill in a port number for client devices to make an 
+  access connection. In client mode, fill in port number given by the Server devices 
+  to make an access connection.
 
-**Start button**: In server mode, push the button, then the computer will serve as 
-server and open a port number for client to make access connection. During this 
-period, the computer will keep monitoring. In client mode, before pushing the 
-button, please make sure the server is on, remote IP address and remote port number 
-is correct; push the button, and the computer will make access connection to the 
-remote port number of the remote IP as a client.
+- **Start button**: In server mode, push the button, then the computer will serve as 
+  server and open a port number for client to make access connection. During this 
+  period, the computer will keep monitoring. In client mode, before pushing the 
+  button, please make sure the server is on, remote IP address and remote port number 
+  is correct; push the button, and the computer will make access connection to the 
+  remote port number of the remote IP as a client.
 
-**clear receive**: clear out the content in the receiving text box 
-**clear send**: clear out the content in the sending text box 
-**Sending button**: push the sending button, the computer will send the content in 
-the text box to others.
+- **clear receive**: clear out the content in the receiving text box 
+
+- **clear send**: clear out the content in the sending text box 
+
+- **Sending button**: push the sending button, the computer will send the content in 
+  the text box to others.
 
 Connect
 ^^^^^^^
@@ -76,11 +78,11 @@ Connect
 
 Sketch
 ^^^^^^^
-Before running the Sketch, please open “Processing_wifi.pde.” first, and click “Run”.
+Before running the Sketch, please open "Processing_wifi.pde." first, and click "Run".
 
 .. image:: img/software/24.3.png
 
-The newly pop up window will use the computer’s IP address by default and open a 
+The newly pop up window will use the computer's IP address by default and open a 
 data monitor port.
 
 .. image:: img/other/processing4-1.png
@@ -91,7 +93,7 @@ owing information based on "LOCAL IP" and "LOCAL PORT" in the figure above.
 .. image:: img/software/24.1.png
 
 REMOTE_IP needs to be filled in according to the interface of Processing_wifi.pde. 
-Taking this tutorial as an example, its REMOTE_IP is “192.168.2.112”. Generally, 
+Taking this tutorial as an example, its REMOTE_IP is "192.168.2.112". Generally, 
 by default, the ports do not need to change its value.
 
 Click LISTENING, turn on TCP SERVER's data listening function and wait for 
@@ -112,6 +114,7 @@ as shown in the figure below.
 .. image:: img/other/processing5.png
 
 **Sketch_24.1_As_Client**
+
 Code
 ^^^^^^
 The following is the program code:
@@ -201,8 +204,8 @@ router, press the reset button as shown below and wait for ESP32-S3 to run again
 
 .. image:: img/phenomenon/24.2.png
 
-Processing： Open the “Super_Starter_Kit_for_ESP32_S3\\Sketches\\Sketches
-\\Sketch_24.2_WiFiServer\\sketchWiFi\\Processing_wifi.pde”. Based on the messages printed 
+Processing： Open the "Super_Starter_Kit_for_ESP32_S3\\Sketches\\Sketches
+\\Sketch_24.2_WiFiServer\\sketchWiFi\\Processing_wifi.pde". Based on the messages printed 
 by the serial monitor, enter correct IP address and serial port in Processing to 
 establish connection and make communication.
 

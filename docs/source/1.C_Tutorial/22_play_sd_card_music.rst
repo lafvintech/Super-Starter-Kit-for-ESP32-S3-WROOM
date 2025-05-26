@@ -37,19 +37,18 @@ Sketch
 In this project, we will use the ESP8266Audio.zip 
 library to decode the audio files in the SD card, and then output the audio signal 
 through GPIO. If you have not installed this library, please follow the steps 
-below to install it. Open arduino->Sketch->Include library-> Add .ZIP Library.
+below to install it. 
+open :menuselection:`arduino --> Sketch --> Include library --> Add .zip Library`.
 
 .. image:: img/software/22-1.png
 
-In the new pop-up window, select "Super_Starter_Kit_for_ESP32_S3\C\Libr
-aries\ESP8266Audio.zip". Then click “Open“.
+In the new pop-up window, select :file:`Super_Starter_Kit_for_ESP32_S3/C/Libraries/ESP8266Audio.zip`. Then click “Open“.
 
 .. image:: img/software/22-2.png
 
 **Sketch_22.1_PlayMP3FromSD**
 
-We placed a folder called "music" in: Super_Starter_Kit_for_ESP32_S3\
-Sketches\Sketch_22.1_PlayMP3FromSD User needs to copy this folder to SD card.
+We placed a folder called "music" in :file:`Super_Starter_Kit_for_ESP32_S3/Sketches/Sketch_22.1_PlayMP3FromSD` User needs to copy this folder to SD card.
 
 .. image:: img/software/22-3.png
 
