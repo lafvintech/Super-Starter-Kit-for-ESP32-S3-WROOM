@@ -117,6 +117,7 @@ as shown in the figure below.
 
 Code
 ^^^^^^
+
 The following is the program code:
 
 .. code-block:: C

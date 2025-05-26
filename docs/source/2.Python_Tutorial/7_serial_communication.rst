@@ -26,8 +26,8 @@ Code
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “07.1_Seri
-al_Print” and double “Serial_Print.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/07.1_Serial_Print` 
+and double “Serial_Print.py”.
 
 **07.1_Serial_Print**
 
@@ -65,8 +65,8 @@ Component and circuit are the same as in the previous project.
 
 Code
 ^^^^^^
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “07.2_Seria
-l_Read_and_Write” and double click “Serial_Read_and_Write.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/07.2_Seria
+l_Read_and_Write` and double click “Serial_Read_and_Write.py”.
 
 **07.2_Serial_Read_and_Write**
 
