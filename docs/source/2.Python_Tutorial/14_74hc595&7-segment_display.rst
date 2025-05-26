@@ -30,8 +30,7 @@ isplay by sending the code value of "0" - "F". Move the program folder “Super_
 arter_Kit_for_ESP32_S3/Python/Python_Codes” to disk(D) in advance with the path 
 of “D:/Micropython_Codes”.
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “14.1_74HC59
-5_and_7_segment_display”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/14.1_74HC595_and_7_segment_display`.
 
 Select “my74HC595.py”, right click your mouse to select “Upload to /”, wait for 
 “my74HC595.py” to be uploaded to ESP32-S3 and then double click“74HC595_and_7_se

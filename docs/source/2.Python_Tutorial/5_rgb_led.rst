@@ -34,8 +34,8 @@ RGBLED color.
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “05.1_Random
-ColorLight”and double click “RandomColorLight.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/05.1_RandomColorLight` 
+and double click “RandomColorLight.py”.
 
 **05.1_RandomColorLight**
 

@@ -82,8 +82,7 @@ Code
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “20.2_AP_mod
-e”. and double click “AP_mode.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/20.2_AP_mode`. and double click “AP_mode.py”.
 **20.2_AP_mode**
 
 .. image:: img/software/20.2.png
@@ -160,8 +159,7 @@ Code
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “20.3_AP+ST
-A_mode”and double click “AP+STA_mode.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/20.3_AP+STA_mode`and double click “AP+STA_mode.py”.
 **20.3_AP+STA_mode**
 
 .. image:: img/software/20.3.png

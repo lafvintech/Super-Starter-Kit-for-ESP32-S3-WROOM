@@ -90,8 +90,8 @@ data monitor port. Click “Listening”。
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “21.1_TCP_a
-s_Client” and double click “TCP_as_Client.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/21.1_TCP_as_Client` 
+and double click “TCP_as_Client.py”.
 
 Before clicking “Run current script”, please modify the name and password of your 
 router and fill in the “host” and “port” according to the IP information shown 
@@ -179,7 +179,8 @@ Code
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “21.2_TCP_as_Server” and double click “TCP_as_Server.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/21.2_TCP_as_Server` 
+and double click “TCP_as_Server.py”.
 
 Before clicking “Run current script”, please modify the name and password of your 
 router shown in the box below.

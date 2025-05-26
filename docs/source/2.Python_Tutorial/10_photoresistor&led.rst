@@ -27,7 +27,6 @@ Component knowledge
 :ref:`Photoresistor <cpn_photoresistor>`
 """""""""""""""""""""""""""""""""""""""""""
 
-
 Connect
 ^^^^^^^^^^^^
 The circuit of this project is similar to project Soft Light. The only difference 

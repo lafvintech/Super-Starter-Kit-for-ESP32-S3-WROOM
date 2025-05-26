@@ -42,8 +42,7 @@ and OFF.
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “06.1_Doorbe
-ll” and double click “Doorbell.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/06.1_Doorbell` and double click “Doorbell.py”.
 
 **06.1_Doorbell**
 
@@ -85,8 +84,7 @@ then buzzer sounds. If you release the button, the buzzer will stop sounding.
 In the logic, it is the same as using button to control LED. In the control 
 method, passive buzzer requires PWM of certain frequency to sound.
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “06.2_Alerto
-r”，and double click “Alertor.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/06.2_Alertor`，and double click “Alertor.py”.
 
 **06.2_Alertor**
 

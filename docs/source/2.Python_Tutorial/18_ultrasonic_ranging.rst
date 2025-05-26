@@ -27,8 +27,8 @@ Code
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “18.1_Ultras
-onic_Ranging” and double click “Ultrasonic_Ranging.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/18.1_Ultrasonic_Ranging` 
+and double click “Ultrasonic_Ranging.py”.
 
 **18.1_Ultrasonic_Ranging**
 

@@ -33,8 +33,8 @@ and then display these outputs in the terminal.
 
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “12.1_Joysti
-ck” and double click “Joystick.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/12.1_Joystick` 
+and double click “Joystick.py”.
 
 **12.1_Joystick**
 
