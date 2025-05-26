@@ -29,13 +29,10 @@ Connect
 
 Code
 ^^^^^^^
-We need to create three PWM channels and use random duty cycle to make random 
-RGBLED color.
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
+We need to create three PWM channels and use random duty cycle to make random RGBLED color.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/05.1_RandomColorLight` 
-and double click “RandomColorLight.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/05.1_RandomColorLight` and double click “RandomColorLight.py”.
 
 **05.1_RandomColorLight**
 
@@ -87,8 +84,7 @@ Using a color model, the color changes from 0 to 255 as shown below.
 .. image:: img/other/5.2.png
 
 In this code, the color model will be implemented and RGBLED will change colors 
-along the model. Open “Thonny”, click“This computer” >> “D:” >> “Micropython_Code
-s” >> “05.2_GradientColorLight” and double click “GradientColorLight.py”.
+along the model. Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/05.2_GradientColorLight` and double click “GradientColorLight.py”.
 
 **05.2_GradientColorLight**
 

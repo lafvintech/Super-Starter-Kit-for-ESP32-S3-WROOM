@@ -25,8 +25,7 @@ not make any errors when connecting the servo to the power supply.
 
 Code
 ^^^^^^^
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
 Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/16.1_Servo_Sweep`. 
 Select “myservo.py”, right click your mouse to select “Upload to /”, wait for 
@@ -88,8 +87,7 @@ not make any errors when connecting the servo to the power supply.
 
 Code
 ^^^^^^^
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
 Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/16.2_Servo_Knop`. 
 Select “myservo.py”, right click your mouse to select “Upload to /”, wait for 

@@ -26,11 +26,9 @@ Connect
 
 Code
 ^^^^^^^
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “09.1_Soft_L
-ED” and double click “Soft_LED.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/09.1_Soft_LED` and double click “Soft_LED.py”.
 
 **09.1_Soft_LED**
 
@@ -96,8 +94,7 @@ Connect
 
 Code
 ^^^^^^
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “09.2_Soft_C
-olorful_Light” and double click “Soft_Colorful_Light.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/09.2_Soft_Colorful_Light` and double click “Soft_Colorful_Light.py”.
 
 **09.2_Soft_Colorful_Light**
 

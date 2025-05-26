@@ -31,10 +31,8 @@ In this project’s code, We will read the ADC values of the X-axis and Y-axis o
 the joystick. The coordinate origin is in the upper left corner of the joystick, 
 and then display these outputs in the terminal.
 
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
-Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/12.1_Joystick` 
-and double click “Joystick.py”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/12.1_Joystick` and double click “Joystick.py”.
 
 **12.1_Joystick**
 

@@ -87,8 +87,7 @@ data monitor port. Click “Listening”。
 
 .. image:: img/other/processing4-2.png
 
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
 Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/21.1_TCP_as_Client` 
 and double click “TCP_as_Client.py”.
@@ -176,8 +175,7 @@ Connect ESP32-S3 to the computer using a USB cable.
 
 Code
 ^^^^^^^
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
 Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/21.2_TCP_as_Server` 
 and double click “TCP_as_Server.py”.

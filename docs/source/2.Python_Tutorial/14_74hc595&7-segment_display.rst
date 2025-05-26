@@ -24,11 +24,10 @@ Connect
 
 Code
 ^^^^^^^
-In this section, the 74HC595 is used in the same way as in the previous section, 
-but with different values transferred. We can learn how to master the digital d
-isplay by sending the code value of "0" - "F". Move the program folder “Super_St
-arter_Kit_for_ESP32_S3/Python/Python_Codes” to disk(D) in advance with the path 
-of “D:/Micropython_Codes”.
+In this section, the 74HC595 is used in the same way as in the previous section,
+but with different values transferred. We can learn how to master the digital display 
+by sending the code value of "0" - "F". Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` 
+to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
 Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/14.1_74HC595_and_7_segment_display`.
 

@@ -21,19 +21,16 @@ Connect ESP32-S3 to the computer using the USB cable.
 
 Code
 ^^^^^^^
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
 **20.1_Station_mode**
 
 .. image:: img/software/20.1.png
 
-Because the names and passwords of routers in various places are different, before 
-the Code runs, users need to enter the correct router’s name and password in the 
-box as shown in the illustration above. After making sure the router name and 
-password are entered correctly, compile and upload codes to ESP32S3,
-wait for ESP32-S3 to connect to your router and print the IP address assigned by 
-the router to ESP32-S3 in “Shell”.
+Because the names and passwords of routers in various places are different, before the Code runs, 
+users need to enter the correct router’s name and password in the box as shown in the illustration above. 
+After making sure the router name and password are entered correctly, compile and upload codes to ESP32S3,
+wait for ESP32-S3 to connect to your router and print the IP address assigned by the router to ESP32-S3 in “Shell”.
 
 .. image:: img/software/20.1-1.png
 
@@ -79,8 +76,7 @@ Connect ESP32-S3 to the computer using the USB cable.
 
 Code
 ^^^^^^^
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
 Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/20.2_AP_mode`. and double click “AP_mode.py”.
 **20.2_AP_mode**
@@ -156,10 +152,10 @@ Component List & Circuit are the same as in Project 23.1.
 
 Code
 ^^^^^^
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
 Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/20.3_AP+STA_mode`and double click “AP+STA_mode.py”.
+
 **20.3_AP+STA_mode**
 
 .. image:: img/software/20.3.png

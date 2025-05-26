@@ -24,11 +24,9 @@ Note that the voltage of ultrasonic module is 5V in the circuit.
 
 Code
 ^^^^^^^
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/18.1_Ultrasonic_Ranging` 
-and double click “Ultrasonic_Ranging.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/18.1_Ultrasonic_Ranging` and double click “Ultrasonic_Ranging.py”.
 
 **18.1_Ultrasonic_Ranging**
 
@@ -82,10 +80,9 @@ Code
 
 This version encapsulates the functions into the folder hr04.py, and the main program can run with only a small amount of code.
 
-Open "Thonny", click "This computer" >> "D:" >> "Micropython_Codes" >> "18.2_Ultras
-onic_Ranging". Select "hcsr04.py", right click your mouse to select "Upload to /"
-, wait for "hcsr04.py" to be uploaded to ESP32-S3 and then double click "Ultrason
-ic_Ranging.py".
+Open "Thonny", click :file:`This computer/D:/Micropython_Codes/18.2_Ultrasonic_Ranging`. 
+Select "hcsr04.py", right click your mouse to select "Upload to /", wait for "hcsr04.py" 
+to be uploaded to ESP32-S3 and then double click "Ultrasonic_Ranging.py".
 
 **18.2_Ultrasonic_Ranging**
 

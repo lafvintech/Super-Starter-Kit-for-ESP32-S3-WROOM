@@ -30,9 +30,9 @@ Code
 ^^^^^^^
 This project is designed to make PWM output GPIO2 with pulse width increasing 
 from 0% to 100%, and then reducing from 100% to 0% gradually. Move the program 
-folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes” to disk(D) 
+folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) 
 in advance with the path of “D:/Micropython_Codes”. Open “Thonny”， 
-click:file:`This computer/D:/Micropython_Codes/04.1_BreatheLight` and double click 
+click :file:`This computer/D:/Micropython_Codes/04.1_BreatheLight` and double click 
 “BreatheLight.py”.
 
 **04.1_BreatheLight**
@@ -86,10 +86,8 @@ Connect
 
 Code
 ^^^^^^^
-Flowing Light with tail was implemented with PWM. Open “Thonny”, click 
-:file:`This computer/D:/Micropython_Codes/04.2_FlowingLight`. Select “pwm.py”, 
-right click to select “Upload to /”, wait for “pwm.py” to be uploaded to ESP32-S
-3 and then double click “FlowingLight.py”.
+Flowing Light with tail was implemented with PWM. Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/04.2_FlowingLight`. 
+Select “pwm.py”, right click to select “Upload to /”, wait for “pwm.py” to be uploaded to ESP32-S3 and then double click “FlowingLight.py”.
 
 **04.2_FlowingLight**
 

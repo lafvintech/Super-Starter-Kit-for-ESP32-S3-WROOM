@@ -30,13 +30,10 @@ iPhone users can download it from this link:
 
 Code
 ^^^^^^^
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
-Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/19.1_BLE`. 
-Select “ble_advertising.py”, right click your mouse to select “Upload to /”, 
-wait for “ble_advertising.py” to be uploaded to ESP32-S3 and then double click 
-“BLE.py”.
+Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/19.1_BLE`.Select “ble_advertising.py”, right click your mouse to select “Upload to /”, 
+wait for “ble_advertising.py” to be uploaded to ESP32-S3 and then double click “BLE.py”.
 
 **19.1_BLE**
 
@@ -218,11 +215,9 @@ Connect ESP32-S3 to the computer using a USB cable.
 
 Code
 ^^^^^^
-Move the program folder  “Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes”  to disk(D) 
-in advance with the path of  “D:/Micropython_Codes”.
+Move the program folder  :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes`  to disk(D) in advance with the path of  “D:/Micropython_Codes”.
 Open  “Thonny”, click :file:`This computer/D:/Micropython_Codes/19.2_BLE_LED`. Select “ble_advertising.py”, right click your mouse to select  “Upload t
-o /”, wait for “ble_advertising.py”  to be uploaded to ESP32-S3 and then double 
-click  “BLE_LED.py”
+o /”, wait for “ble_advertising.py”  to be uploaded to ESP32-S3 and then double click  “BLE_LED.py”
 
 **19.2_BLE_LED**
 

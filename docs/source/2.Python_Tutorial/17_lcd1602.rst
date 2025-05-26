@@ -21,8 +21,7 @@ Connect
 
 Code
 ^^^^^^^
-Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
-odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
+Move the program folder :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes` to disk(D) in advance with the path of “D:/Micropython_Codes”.
 
 Open “Thonny”, click :file:`This computer/D:/Micropython_Codes/17.1_I2C_LCD1602`. 
 Select “I2C_LCD.py”and “LCD_API.py”, right click your mouse to select “Upload to 
