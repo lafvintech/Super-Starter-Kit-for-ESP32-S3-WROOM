@@ -42,7 +42,7 @@ gment_display.py”.
 .. image:: img/software/14.1.png
 
 Click “Run current script”，and you'll see a 1-bit, 7-segment display displaying 
-0-f in a loop.
+0-F in a loop.
 
 .. image:: img/phenomenon/14.1.png
 

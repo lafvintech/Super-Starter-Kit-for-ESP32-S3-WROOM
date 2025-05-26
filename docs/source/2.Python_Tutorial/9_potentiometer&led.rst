@@ -103,8 +103,8 @@ olorful_Light” and double click “Soft_Colorful_Light.py”.
 
 .. image:: img/software/9.2.png
 
-Click “Run current script” and control the change of RGBLED color by rotating 
-the handles of three rotary potentiometers. 
+Click “Run current script”, rotate one of the potentiometers, The corresponding 
+led colors will change: 38 control red, 39 control green, 40 control blue.
 
 The following is the program code:
 

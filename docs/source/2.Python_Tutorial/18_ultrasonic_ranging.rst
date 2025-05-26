@@ -80,16 +80,18 @@ Component List and Connect are the same as the previous section
 Code
 ^^^^^^^
 
-Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “18.2_Ultras
-onic_Ranging”. Select “hcsr04.py”, right click your mouse to select “Upload to /”
-, wait for “hcsr04.py” to be uploaded to ESP32-S3 and then double click “Ultrason
-ic_Ranging.py”.
+This version encapsulates the functions into the folder hr04.py, and the main program can run with only a small amount of code.
+
+Open "Thonny", click "This computer" >> "D:" >> "Micropython_Codes" >> "18.2_Ultras
+onic_Ranging". Select "hcsr04.py", right click your mouse to select "Upload to /"
+, wait for "hcsr04.py" to be uploaded to ESP32-S3 and then double click "Ultrason
+ic_Ranging.py".
 
 **18.2_Ultrasonic_Ranging**
 
 .. image:: img/software/18.2.png
 
-Click “Run current script”. Use the ultrasonic module to measure distance. As 
+Click "Run current script". Use the ultrasonic module to measure distance. As 
 shown in the following figure:
 
 .. image:: img/software/18.2-1.png
@@ -150,11 +152,3 @@ The following is the program code:
             pingTime=time.ticks_diff(pingStop,pingStart)
             distance=pingTime*soundVelocity/2/10000
             return distance
-    
-
-
-
-
-
-
-

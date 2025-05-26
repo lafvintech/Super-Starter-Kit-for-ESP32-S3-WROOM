@@ -41,10 +41,10 @@ r_And_Driver” and double click “Motor_And_Driver.py”.
 
 .. image:: img/software/15.1.png
 
-Click “Run current script”, rotate the potentiometer in one direction and the 
-motor speeds up slowly in one direction. Rotate the potentiometer in the other 
-direction and the motor will slow down to stop. And then rotate it in the original 
-direction to accelerate the motor.
+Click “Run current script”, Rotate the potentiometer clockwise, and the motor will 
+gradually accelerate and rotate in one direction. Rotate the potentiometer in the 
+opposite direction, and the motor will decelerate, stop, and then rotate in the 
+other direction.
 
 .. image:: img/phenomenon/15.1.png
 

@@ -27,8 +27,10 @@ Connect
 
 Code
 ^^^^^^^
-In this project’s code, we will read the ADC values of X and Y axes of the Joyst
-ick, and read digital quality of the Z axis, then display these out in Terminal. 
+In this project’s code, We will read the ADC values of the X-axis and Y-axis of 
+the joystick. The coordinate origin is in the upper left corner of the joystick, 
+and then display these outputs in the terminal.
+
 Move the program folder “Super_Starter_Kit_for_ESP32_S3/Python/Python_C
 odes” to disk(D) in advance with the path of “D:/Micropython_Codes”.
 Open “Thonny”, click “This computer” >> “D:” >> “Micropython_Codes” >> “12.1_Joysti
