@@ -32,7 +32,7 @@ Sketch
 .. image:: img/software/10.1.png
 
 Download the code to ESP32-S3 WROOM, by turning the adjustable resistor to change 
-the input voltage of GPIO19, ESP32-S3 changes the output voltage of GPIO14 according 
+the input voltage of GPIO1, ESP32-S3 changes the output voltage of GPIO14 according 
 to this voltage value, thus changing the brightness of the LED.
 
 Code
@@ -86,8 +86,9 @@ Sketch
 
 .. image:: img/software/10.2.png
 
-Download the code to ESP32-S3 WROOM, rotate one of the potentiometers, then the 
-color of RGB LED will change.
+Download the code to ESP32-S3 WROOM, rotate one of the potentiometers, The 
+corresponding led colors will change: 38 control red, 39 control green, 40 control blue.
+
 
 Code
 ^^^^^^

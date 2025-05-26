@@ -29,8 +29,9 @@ Connect
 
 Sketch
 ^^^^^^^
-In this project’s code, we will read the ADC values of X and Y axes of the joyst
-ick, and read digital quality of the Z axis, then display these out in terminal.
+In this project’s code, We will read the ADC values of the X-axis and Y-axis of 
+the joystick. The coordinate origin is in the upper left corner of the joystick, 
+and then display these outputs in the terminal.
 
 **Sketch_13.1_Joystick**
 
@@ -48,15 +49,15 @@ The following is the program code:
 
 .. code-block:: C
 
-    int xyzPins[] = {14, 13};   //x,y pins
+    int xyPins[] = {14, 13};   //x,y pins
 
     void setup() {
     Serial.begin(115200);  // Initialize serial communication at 115200 baud rate
     }
 
     void loop() {
-    int xVal = analogRead(xyzPins[0]);  // Read X-axis value
-    int yVal = analogRead(xyzPins[1]);  // Read Y-axis value
+    int xVal = analogRead(xyPins[0]);  // Read X-axis value
+    int yVal = analogRead(xyPins[1]);  // Read Y-axis value
     Serial.printf("X,Y: %d,\t%d\n", xVal, yVal);  // Print X and Y values
     delay(500);  // Wait for 500 milliseconds before next reading
     }
