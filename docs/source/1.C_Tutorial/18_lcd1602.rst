@@ -24,13 +24,13 @@ Sketch
 **How to install the library**
 
 We use the third party library LiquidCrystal I2C. If you haven't installed it yet, 
-please do so before learning. The steps to add third-party Libraries are as follows: 
-open ``arduino->Sketch->Include library-> Add .zip Library``.... Select "Super_S
-tarter_Kit_for_ESP32_S3\C\Libraries\LiquidCrystal_I2C.zip" for installation.
+please do so before learning. The steps to add third-party Libraries are as follows:
+open :menuselection:`arduino --> Sketch --> Include library --> Add .zip Library`. 
+Select :file:`Super_Starter_Kit_for_ESP32_S3/C/Libraries/LiquidCrystal_I2C.zip` for installation.
 
-.. image:: img/other/add_ziplib.png
+.. image:: img/other/add_ziplib1.png
 
-.. image:: img/other
+.. image:: img/other/add_ziplib2.png
 
 Use I2C LCD 1602 to display characters and variables.
 

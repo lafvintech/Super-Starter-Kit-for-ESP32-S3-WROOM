@@ -30,7 +30,7 @@ display by sending the coded value of "0" - "F".
 
 .. image:: img/software/15.1.png
 
-Verify and upload the code, and you'll see a 1-bit, 7-segment display displaying 0-f in a loop.
+Verify and upload the code, and you'll see a 1-bit, 7-segment display displaying 0-F in a loop.
 
 .. image:: img/phenomenon/15.1.png
 

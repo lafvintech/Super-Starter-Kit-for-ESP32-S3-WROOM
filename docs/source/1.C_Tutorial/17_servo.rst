@@ -14,7 +14,7 @@ Component List
 - GPIO Extension Board x1
 - 830 Tie-Points Breadboard x1
 - Servo x1
-- Jumper Wire x5
+- Jumper Wire x3
 
 Connect
 ^^^^^^^^^^^

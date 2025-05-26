@@ -36,10 +36,10 @@ Sketch
 
 .. image:: img/software/16.1.png
 
-Download code to ESP32-S3 WROOM, rotate the potentiometer in one direction and 
-the motor speeds up slowly in one direction. And then rotate the potentiometer 
-in the other direction and the motor will slow down to stop. And then rotate it 
-in an inverse direction to accelerate the motor.
+Download code to ESP32-S3 WROOM, Rotate the potentiometer clockwise, and the motor 
+will gradually accelerate and rotate in one direction. Rotate the potentiometer in 
+the opposite direction, and the motor will decelerate, stop, and then rotate in 
+the other direction.
 
 .. image:: img/phenomenon/16.1.png
 

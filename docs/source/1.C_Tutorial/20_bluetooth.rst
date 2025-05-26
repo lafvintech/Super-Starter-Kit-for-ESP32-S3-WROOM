@@ -189,7 +189,7 @@ Sketch
 .. image:: img/software/20.2.png
 
 Compile and upload code to ESP32S3_Blueooth. The operation of the APP is the sam
-e as 27.1, you only need to change the sending content to "led_on" and "led_off" 
+e as 20.1, you only need to change the sending content to "led_on" and "led_off" 
 to operate LEDs on the ESP32-S3 WROOM. 
 Data sent from mobile APP:
 
