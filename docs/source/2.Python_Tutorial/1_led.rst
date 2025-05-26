@@ -45,11 +45,11 @@ resource.
 
 Code
 ^^^^^^^^
-Codes used in this tutorial are saved in “Super_Starter_Kit_for_ESP32_S
-3/Python/ Python_Codes”. You can move the codes to any location. For example, we 
+Codes used in this tutorial are saved in :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes`. You can move the codes to any location. For example, we 
 save the codes in Disk(D) with the path of “D:/Micropython_Codes”.
 
 **01.1_Blink**
+
 Open “Thonny”，click “This computer”>>“D:”>>“Micropython_Codes”.
 
 .. image:: img/software/1.0.png
@@ -136,8 +136,7 @@ Connect
     
 Code
 ^^^^^
-Codes used in this tutorial are saved in “Super_Starter_Kit_for_ESP32_S
-3/Python/ Python_Codes”. You can move the codes to any location. For example, we 
+Codes used in this tutorial are saved in :file:`Super_Starter_Kit_for_ESP32_S3/Python/Python_Codes`. You can move the codes to any location. For example, we 
 save the codes in Disk(D) with the path of “D:/Micropython_Codes”.
 
 **01.1_Blink**
