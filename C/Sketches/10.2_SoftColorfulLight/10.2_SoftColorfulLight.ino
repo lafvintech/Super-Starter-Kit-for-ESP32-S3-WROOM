@@ -1,4 +1,4 @@
-const byte adcChns[] = {12, 13, 14};    // define the adc channels
+const byte adcChns[] = {14, 13, 12};    // define the adc channels
 const byte ledPins[] = {38, 39, 40};    // define led pins
 const byte pwmChns[] = { 0,  1,  2};    // define the pwm channels
 int colors[] = {0, 0, 0};               // red, green ,blue values of color.
