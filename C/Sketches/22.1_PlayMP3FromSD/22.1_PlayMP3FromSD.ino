@@ -51,7 +51,7 @@ void setup()
   Serial.printf("Sample MP3 playback begins...\n");
 
   audioLogger = &Serial;
-  file = new AudioFileSourceSD_MMC("/music/01.mp3");
+  file = new AudioFileSourceSD_MMC("/music/Good Time.mp3");
   id3 = new AudioFileSourceID3(file);
   id3->RegisterMetadataCB(MDCallback, (void*)"ID3TAG");
   //out = new AudioOutputI2S();
