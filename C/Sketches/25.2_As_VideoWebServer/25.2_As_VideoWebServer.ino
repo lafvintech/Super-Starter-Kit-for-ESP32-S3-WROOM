@@ -7,8 +7,8 @@
 
 #include "camera_pins.h"
 
-const char* ssid     = "your_ssid";   //input your wifi name
-const char* password = "your_password";   //input your wifi passwords
+const char* ssid     = "*********";   //input your wifi name
+const char* password = "*********";   //input your wifi passwords
 
 void cameraInit(void);
 void startCameraServer();
@@ -69,7 +69,7 @@ void cameraInit(void){
   config.pixel_format = PIXFORMAT_JPEG; // for streaming
   config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
   config.fb_location = CAMERA_FB_IN_PSRAM;
-  config.jpeg_quality = 12;
+  config.jpeg_quality = 8;
   config.fb_count = 1;
   
   // if PSRAM IC present, init with UXGA resolution and higher JPEG quality
@@ -80,7 +80,7 @@ void cameraInit(void){
     config.grab_mode = CAMERA_GRAB_LATEST;
   } else {
     // Limit the frame size when PSRAM is not available
-    config.frame_size = FRAMESIZE_SVGA;
+    config.frame_size = FRAMESIZE_VGA;
     config.fb_location = CAMERA_FB_IN_DRAM;
   }
 
@@ -92,8 +92,8 @@ void cameraInit(void){
   }
 
   sensor_t * s = esp_camera_sensor_get();
-  // initial sensors are flipped vertically and colors are a bit saturated
-  s->set_vflip(s, 0); // flip it back
+  s->set_vflip(s, 0); // Set to 1 to flip vertically (fix upside-down)
+  s->set_hmirror(s, 0); // Set to 1 to flip horizontally (fix left-right mirror)
   s->set_brightness(s, 1); // up the brightness just a bit
   s->set_saturation(s, 0); // lower the saturation
 }
