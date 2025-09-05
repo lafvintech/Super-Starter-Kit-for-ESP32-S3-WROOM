@@ -1205,6 +1205,15 @@ void startCameraServer()
 {
     httpd_config_t config = HTTPD_DEFAULT_CONFIG();
     config.max_uri_handlers = 16;
+    
+    // Performance optimization settings
+    config.task_priority = 6;  // Increase task priority
+    config.stack_size = 8192;  // Increase stack size
+    config.core_id = 1;  // Bind to core 1
+    config.max_open_sockets = 7;  // Increase max connections
+    config.max_resp_headers = 8;  // Increase response headers count
+    config.backlog_conn = 5;  // Increase connection queue
+    config.lru_purge_enable = true;  // Enable LRU cleanup
 
     httpd_uri_t index_uri = {
         .uri = "/",
@@ -1375,6 +1384,15 @@ void startCameraServer()
 
     config.server_port += 1;
     config.ctrl_port += 1;
+    
+    // Stream server specific optimization
+    config.task_priority = 7;  // Higher priority for streaming
+    config.stack_size = 12288;  // Streaming requires larger stack
+    config.core_id = 0;  // Bind to core 0, separate from main server
+    config.max_open_sockets = 4;  // Streaming connection count
+    config.recv_wait_timeout = 30;  // Receive timeout 30 seconds
+    config.send_wait_timeout = 30;  // Send timeout 30 seconds
+    
     ESP_LOGI(TAG, "Starting stream server on port: '%d'", config.server_port);
     if (httpd_start(&stream_httpd, &config) == ESP_OK)
     {

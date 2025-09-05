@@ -24,8 +24,8 @@
 // ===========================
 // Enter your WiFi credentials
 // ===========================
-const char* ssid     = "your_ssid";
-const char* password = "your_password";
+const char* ssid     = "2A804";
+const char* password = "la1234567890";
 
 void startCameraServer();
 
@@ -54,24 +54,19 @@ void setup() {
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
-  config.frame_size = FRAMESIZE_UXGA;
-  config.pixel_format = PIXFORMAT_JPEG; // for streaming
-  config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
-  config.fb_location = CAMERA_FB_IN_PSRAM;
-  config.jpeg_quality = 12;
-  config.fb_count = 1;
   
-  // if PSRAM IC present, init with UXGA resolution and higher JPEG quality
-  // for larger pre-allocated frame buffer.
-  if(psramFound()){
-    config.jpeg_quality = 10;
-    config.fb_count = 2;
-    config.grab_mode = CAMERA_GRAB_LATEST;
-  } else {
-    // Limit the frame size when PSRAM is not available
-    config.frame_size = FRAMESIZE_SVGA;
-    config.fb_location = CAMERA_FB_IN_DRAM;
-  }
+  // OV2640 optimized configuration - focus on quality and smoothness
+  config.frame_size = FRAMESIZE_SVGA;  // SVGA 800x600 - OV2640 optimal quality resolution
+  config.pixel_format = PIXFORMAT_JPEG; // for streaming
+  config.grab_mode = CAMERA_GRAB_LATEST;  // Get latest frame, reduce latency
+  config.fb_location = CAMERA_FB_IN_DRAM;  // No PSRAM dependency, use DRAM
+  config.jpeg_quality = 8;  // High quality setting (lower number = higher quality)
+  config.fb_count = 1;  // Single buffer, reduce memory usage
+  
+  Serial.println("=== OV2640 Optimized Configuration ===");
+  Serial.printf("Target resolution: SVGA (800x600)\n");
+  Serial.printf("JPEG quality: %d (high quality)\n", config.jpeg_quality);
+  Serial.printf("Frame buffer: DRAM (no PSRAM dependency)\n");
 
   // camera init
   esp_err_t err = esp_camera_init(&config);
@@ -81,26 +76,52 @@ void setup() {
   }
 
   sensor_t * s = esp_camera_sensor_get();
-  // initial sensors are flipped vertically and colors are a bit saturated
+  if (s == NULL) {
+    Serial.println("Failed to get camera sensor");
+    return;
+  }
+  
+  Serial.printf("Camera sensor detected: PID=0x%02X\n", s->id.PID);
+  
+  // OV2640 specific image quality optimization settings
   s->set_vflip(s, 0); // flip it back
-  s->set_brightness(s, 1); // up the brightness just a bit
-  s->set_saturation(s, 0); // lower the saturation
+  s->set_brightness(s, 1); // moderate brightness increase
+  s->set_saturation(s, 1); // slightly increase saturation for enhanced colors
+  s->set_contrast(s, 1); // increase contrast for enhanced details
+  
+  // OV2640 image quality enhancement settings
+  s->set_gainceiling(s, (gainceiling_t)2);  // gain ceiling, balance noise
+  s->set_colorbar(s, 0);  // disable color bar
+  s->set_whitebal(s, 1);  // enable auto white balance
+  s->set_gain_ctrl(s, 1);  // enable auto gain
+  s->set_exposure_ctrl(s, 1);  // enable auto exposure
+  s->set_hmirror(s, 0);  // no horizontal mirror
+  s->set_dcw(s, 1);  // enable downsampling
+  s->set_bpc(s, 1);  // enable bad pixel correction, improve quality
+  s->set_wpc(s, 1);  // enable white pixel correction
+  s->set_raw_gma(s, 1);  // enable raw gamma correction
+  s->set_lenc(s, 1);  // enable lens correction, reduce distortion
+  
+  // Set effect to normal mode (no effect)
+  s->set_special_effect(s, 0);  // 0 = no effect
+  
+  Serial.println("OV2640 optimized for high image quality");
   
   WiFi.begin(ssid, password);
-  WiFi.setSleep(false);
+  WiFi.setSleep(false);  // Disable WiFi power saving mode, improve performance
+  
+  // Set WiFi power to maximum
+  WiFi.setTxPower(WIFI_POWER_19_5dBm);
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
-  /*
-  while (WiFi.STA.hasIP() != true) {
-    Serial.print(".");
-    delay(500);
-  }
-  */
+  
   Serial.println("");
   Serial.println("WiFi connected");
+  Serial.printf("WiFi signal strength: %d dBm\n", WiFi.RSSI());
+  Serial.printf("WiFi channel: %d\n", WiFi.channel());
 
   startCameraServer();
 
@@ -110,6 +131,18 @@ void setup() {
 }
 
 void loop() {
-  // Do nothing. Everything is done in another task by the web server
-  delay(10000);
+  // Monitor system status
+  static unsigned long last_report = 0;
+  unsigned long now = millis();
+  
+  if (now - last_report > 30000) {  // Report status every 30 seconds
+    last_report = now;
+    Serial.printf("System Status - Free heap: %d bytes, Min free heap: %d bytes\n", 
+                 ESP.getFreeHeap(), ESP.getMinFreeHeap());
+    Serial.printf("WiFi status: %s, RSSI: %d dBm\n", 
+                 WiFi.isConnected() ? "Connected" : "Disconnected", WiFi.RSSI());
+  }
+  
+  // Lightweight delay, reduce CPU usage
+  delay(1000);
 }
