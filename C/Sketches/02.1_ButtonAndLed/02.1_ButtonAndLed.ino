@@ -1,4 +1,4 @@
-#define PIN_LED    3
+#define PIN_LED    2
 #define PIN_BUTTON 13
 // the setup function runs once when you press reset or power the board
 void setup() {
