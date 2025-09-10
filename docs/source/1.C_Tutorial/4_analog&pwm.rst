@@ -28,6 +28,9 @@ This circuit is the same as the one in engineering Blink.
 
 Sketch
 ^^^^^^^
+Upload following sketch:
+:file:`LAFVIN_Super_Starter_Kit_For_Esp32_S3\\Sketches\\04.1_BreathingLight`
+
 This project is designed to make PWM output GPIO2 with pulse width increasing from 
 0% to 100%, and then reducing from 100% to 0% gradually.
 
@@ -98,6 +101,9 @@ Connect
 
 Sketch
 ^^^^^^^
+Upload following sketch:
+:file:`LAFVIN_Super_Starter_Kit_For_Esp32_S3\\Sketches\\04.2_FlowingLight2`
+
 Meteor flowing light will be implemented with PWM.
 
 .. image:: img/software/4.2.png

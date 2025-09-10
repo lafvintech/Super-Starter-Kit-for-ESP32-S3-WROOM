@@ -30,7 +30,7 @@ First turn LED1 ON, then turn it OFF. Then turn LED2 ON, and then turn it OFF...
 and repeat the same to all 10 LEDs until the last LED is turns OFF. This process 
 is repeated to achieve the “movements” of flowing water. 
 Upload following sketch:
-:guilabel:`LAFVIN_Super_Starter_Kit_For_Esp32_S3\Sketches\Sketch_03.1_ButtonAndLed.`
+:file:`LAFVIN_Super_Starter_Kit_For_Esp32_S3\\Sketches\\03.1_FlowingLight`
 
 .. image:: img/software/3.1.png
 

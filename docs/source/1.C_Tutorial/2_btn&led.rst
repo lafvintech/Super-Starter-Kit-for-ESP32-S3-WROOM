@@ -45,7 +45,7 @@ This project is designed for learning how to use push button switch to control a
 LED. We first need to read the state of switch, and then determine whether to turn 
 the LED ON in accordance to the state of the switch. 
 Upload following sketch: 
-:guilabel:`LAFVIN_Super_Starter_Kit_For_Esp32_S3\Sketches\Sketch_02.1_ButtonAndLed.`
+:file:`LAFVIN_Super_Starter_Kit_For_Esp32_S3\\Sketches\\02.1_ButtonAndLed.`
 
 .. image:: img/software/2.1.png
 

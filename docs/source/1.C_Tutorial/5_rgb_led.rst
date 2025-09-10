@@ -29,6 +29,9 @@ Connect
 
 Sketch
 ^^^^^^^
+Upload following sketch:
+:file:`LAFVIN_Super_Starter_Kit_For_Esp32_S3\\Sketches\\05.1_RandomColorLight`
+
 We need to create three PWM channels and use random duty cycle to make random RGB 
 LED color.
 
@@ -82,6 +85,9 @@ Using a color model, the color changes from 0 to 255 as shown below.
 
 In this code, the color model will be implemented and RGB LED will change colors 
 along the model.
+
+Upload following sketch:
+:file:`LAFVIN_Super_Starter_Kit_For_Esp32_S3\\Sketches\\05.2_GradientColorLight`
 
 **Sketch_05.2_SoftColorfulLight**
 The following is the program code:
