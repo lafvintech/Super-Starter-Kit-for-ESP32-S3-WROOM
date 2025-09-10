@@ -30,42 +30,19 @@ WiFi, we need to modify Sketch a little bit based on physical situation.
 
 .. image:: img/software/26.1.png
 
-In the box in the figure above, ssid_Router and password_Router are the user's 
-Router name and password, which need to be modified according to the actual name 
-and password. ssid_AP and password_AP are name and password of a AP created by 
-ESP32-S3, and they are freely set by the user. When all settings are correct, com
-pile and upload the code to ESP32-S3, turn on the serial port monitor, and set the 
-baud rate to 115200. The serial monitor will print out two IP addresses.
+Fill in your router's SSID and password in the quotes after ssid_Router and password_Router in the image above. After setting correctly, compile and upload to ESP32-S3.
+Open the serial monitor and press the reset button on the Raspberry Pi, the serial monitor will print out an IP address.
 
 .. image:: img/phenomenon/26.1.png
 
-There are two methods for you to check camera data of ESP32-S3 via mobile phone APP.
+First, connect your phone to your router to ensure it's on the same local network. Then open the RaspPICar app and enter the IP address printed by the serial monitor in the IP input box in the upper left corner. Click the connect button, and after successful connection, a video stream will be displayed as shown in the figure below
 
-Method 1: 
-Using your phone's WiFi function, select the WiFi name represented by ssid_AP in 
-Sketch and enter the password “password_AP” to connect.
-
-Here, the ssid_AP is set to "ESP32S3" and the password_AP is "12345678".
-
-Next, open RaspPICar app and Enter the IP address printed by serial port in the new interface, which generally 
-is “192.168.4.1”
+.. image:: img/phenomenon/26.1-1.jpg
 
 .. image:: img/phenomenon/26.1-2.jpg
 
-Click “WIFI” button.
-
-.. image:: img/phenomenon/26.1-3.jpg
-
-Method 2: 
-Using your phone's WiFi function, select the router named ssid_Router and enter 
-the password “ssid_password” to connect. And then open RaspPICar app and select 
-4WD Car for Raspberry Pi mode. The operation is similar to Method 1.
-
-Enter the IP address printed by serial port in the new interface, which generally 
-is not “192.168.4.1” but another one. The IP address in this example is “192.168.
-2.113”. After entering the IP address, click “Connect”.
-
-.. image:: img/phenomenon/26.1-1.jpg
+.. important::
+    **Camera Module Compatibility Notice**: If you are using an **OV3660** camera module instead of the **OV2640** camera, please locate the **OV3660** folder in your code directory and use the corresponding code files. The camera model definition and pin configurations may differ between camera modules.
     
 Code
 ^^^^^^
@@ -78,133 +55,193 @@ folder when write your own code.
     #include "esp_camera.h"
     #include <WiFi.h>
     #include <WiFiClient.h>
-    #include <WiFiAP.h>
 
     #define CAMERA_MODEL_ESP32S3_EYE
     #include "camera_pins.h"
-    #define LED_BUILT_IN  2  // Define the built-in LED pin
+    #define LED_BUILT_IN  2  // Built-in LED pin
 
-    // WiFi credentials
-    const char* ssid_Router     =   "********"; // Your router's SSID
-    const char* password_Router =   "********";; // Your router's password
-    const char *ssid_AP         =   "ESP32S3"; // Set your AP name
-    const char *password_AP     =   "12345678"; // Set your AP password
+    // WiFi configuration
+    const char* ssid_Router     = "*********"; // Router SSID
+    const char* password_Router = "*********"; // Router password
 
-    WiFiServer server_Cmd(5000);     // Command server on port 5000
-    WiFiServer server_Camera(8000);  // Camera server on port 8000
-    extern TaskHandle_t loopTaskHandle;
+    WiFiServer server_Cmd(5000);     // Command server port 5000
+    WiFiServer server_Camera(8000);  // Camera server port 8000
+    TaskHandle_t cmdTaskHandle = NULL;
+    TaskHandle_t blinkTaskHandle = NULL;
 
     void setup() {
     Serial.begin(115200);
     Serial.setDebugOutput(false);
     Serial.println();
+    
+    // Ultimate performance settings - for 8MB PSRAM hardware
+    setCpuFrequencyMhz(240);           // Maximum CPU frequency
+    
+    // WiFi performance optimization
+    WiFi.setTxPower(WIFI_POWER_19_5dBm); // Maximum WiFi transmission power
+    
+    // TCP/IP stack optimization
+    WiFi.setSleep(false);              // Disable WiFi sleep to improve response speed
+    
+    // Initialize LED
     pinMode(LED_BUILT_IN, OUTPUT);
-    cameraSetup();  // Initialize the camera
+    digitalWrite(LED_BUILT_IN, LOW);
+    
+    // Initialize camera
+    cameraSetup();
 
-    // Set up WiFi Access Point
-    WiFi.softAP(ssid_AP, password_AP);
-    IPAddress myIP = WiFi.softAPIP();
-    Serial.print("AP IP address: ");
-    Serial.println(myIP);
-    server_Camera.begin(8000);
-    server_Cmd.begin(5000);
-    /////////////////////////////////////////////////////
     // Connect to WiFi router
+    Serial.printf("Connecting to %s ", ssid_Router);
     WiFi.begin(ssid_Router, password_Router);
-    Serial.print("Connecting ");
-    Serial.print(ssid_Router);
-    while (WiFi.status() != WL_CONNECTED) {
+    WiFi.setAutoReconnect(true);
+    WiFi.persistent(true);
+    
+    // Wait for WiFi connection
+    uint8_t retries = 30;
+    while (WiFi.status() != WL_CONNECTED && retries--) {
         delay(500);
         Serial.print(".");
-    }
-    while (WiFi.STA.hasIP() != true) {
-        Serial.print(".");
-        delay(500);
     }
     Serial.println("");
-    Serial.println("WiFi connected");
-    /////////////////////////////////////////////////////
-    Serial.print("Camera Ready! Use '");
-    Serial.print(WiFi.softAPIP());
-    Serial.print(" or ");
-    Serial.print(WiFi.localIP());
-    Serial.println("' to connect in RaspPICar app.");
-
-    disableCore0WDT();  // Disable watchdog timer on core 0
-    // Create tasks for command handling and LED blinking on core 0
-    xTaskCreateUniversal(loopTask_Cmd, "loopTask_Cmd", 8192, NULL, 1, &loopTaskHandle, 0);
-    xTaskCreateUniversal(loopTask_Blink, "loopTask_Blink", 8192, NULL, 1, &loopTaskHandle, 0);
+    
+    if (WiFi.status() == WL_CONNECTED) {
+        Serial.println("WiFi connected");
+        Serial.print("Camera Ready! Use 'http://");
+        Serial.print(WiFi.localIP());
+        Serial.println(":8000' to connect in app.");
+        
+        // Start servers
+        server_Camera.begin(8000);
+        server_Cmd.begin(5000);
+    } else {
+        Serial.println("WiFi connection failed!");
     }
 
-    // Main loop (runs on core 1)
+    // Disable core 0 watchdog timer
+    disableCore0WDT();
+    
+    // Memory optimization - fully utilize 8MB PSRAM
+    heap_caps_malloc_extmem_enable(1024); // Enable external memory allocation
+    
+    // Create command processing and LED blinking tasks on core 0 - using larger stack space
+    xTaskCreateUniversal(loopTask_Cmd, "loopTask_Cmd", 8192, NULL, 2, &cmdTaskHandle, 0);  // Increase stack size and priority
+    xTaskCreateUniversal(loopTask_Blink, "loopTask_Blink", 4096, NULL, 1, &blinkTaskHandle, 0);
+    }
+
+    // Main loop (running on core 1)
     void loop() {
-    WiFiClient client = server_Camera.accept();  // Listen for incoming clients
+    // Check WiFi connection status
+    if (WiFi.status() != WL_CONNECTED) {
+        Serial.println("WiFi connection lost, reconnecting...");
+        WiFi.reconnect();
+        // Wait for reconnection, maximum 10 seconds
+        uint8_t retries = 20;
+        while (WiFi.status() != WL_CONNECTED && retries--) {
+        delay(500);
+        Serial.print(".");
+        }
+        if (WiFi.status() == WL_CONNECTED) {
+        Serial.println("\nReconnected to WiFi");
+        }
+    }
+
+    // Accept camera client connection
+    WiFiClient client = server_Camera.accept();
     if (client) {
         Serial.println("Camera Server connected to a client.");
-        String currentLine = "";
+        
+        // Ultimate TCP connection optimization
+        client.setNoDelay(true);           // Disable Nagle algorithm
+        client.setTimeout(100);            // Reduce timeout duration
+        
+        uint32_t frameCount = 0;
+        uint32_t startTime = millis();
+        
         while (client.connected()) {
-        camera_fb_t * fb = NULL;
-        while (client.connected()) {
-            fb = esp_camera_fb_get();  // Get a frame from the camera
-            if (fb != NULL) {
+        camera_fb_t *fb = esp_camera_fb_get();
+        if (fb != NULL) {
             // Send frame size
-            uint8_t slen[4];
-            slen[0] = fb->len >> 0;
-            slen[1] = fb->len >> 8;
-            slen[2] = fb->len >> 16;
-            slen[3] = fb->len >> 24;
-            client.write(slen, 4);
-            // Send frame data
-            client.write(fb->buf, fb->len);
+            uint32_t frameSize = fb->len;
+            client.write((uint8_t*)&frameSize, 4);
+            
+            // Ultra-large transmission block optimization - 8MB PSRAM supports larger block transmission
+            size_t sentBytes = 0;
+            while (sentBytes < fb->len) {
+            size_t chunkSize = min(16384, (int)(fb->len - sentBytes)); // 16KB transmission block
+            size_t sent = client.write(fb->buf + sentBytes, chunkSize);
+            if (sent == 0) {
+                Serial.println("Send failed");
+                break;
+            }
+            sentBytes += sent;
+            }
+            
             esp_camera_fb_return(fb);
+            
+            // Calculate and display frame rate
+            frameCount++;
+            if (frameCount % 30 == 0) {
+            float fps = frameCount * 1000.0 / (millis() - startTime);
+            Serial.printf("Stream FPS: %.2f\n", fps);
             }
-            else {
-            Serial.println("Camera Error");
-            }
+        } else {
+            Serial.println("Camera capture failed");
+            delay(50); // Reduce delay on failure
         }
         }
+        
+        // Display final frame rate
+        float fps = frameCount * 1000.0 / (millis() - startTime);
+        Serial.printf("Stream ended. Average FPS: %.2f\n", fps);
+        
         client.stop();
         Serial.println("Camera Client Disconnected.");
     }
+    
+    // Minimum delay to give video service more CPU time
+    delay(1);
     }
 
-    // Task for handling commands (runs on core 0)
+    // Command processing task (running on core 0)
     void loopTask_Cmd(void *pvParameters) {
-    Serial.println("Task Cmd_Server is starting ... ");
+    Serial.println("Command handler task started on Core 0");
+    
     while (1) {
         WiFiClient client = server_Cmd.accept();
         if (client) {
         Serial.println("Command Server connected to a client.");
-        String currentLine = "";
+        client.setNoDelay(true);
+        
         while (client.connected()) {
             if (client.available()) {
             char c = client.read();
-            client.write(c);
+            client.write(c); // Echo received character
             Serial.write(c);
-            if (c == '\n') {
-                currentLine = "";
-            }
-            else {
-                currentLine += c;
-            }
+            
+            // Command processing logic can be added here
             }
         }
+        
         client.stop();
         Serial.println("Command Client Disconnected.");
         }
+        
+        // Small delay to prevent excessive CPU resource consumption
+        delay(10);
     }
     }
 
-    // Task for blinking LED (runs on core 0)
+    // LED blinking task (running on core 0)
     void loopTask_Blink(void *pvParameters) {
-    Serial.println("Task Blink is starting ... ");
+    Serial.println("LED blink task started on Core 0");
+    
     while (1) {
-        digitalWrite(LED_BUILT_IN, !digitalRead(LED_BUILT_IN));  // Toggle LED state
-        delay(1000);
+        digitalWrite(LED_BUILT_IN, !digitalRead(LED_BUILT_IN)); // Toggle LED state
+        delay(500); // Increase blinking frequency
     }
     }
 
-    // Function to set up the camera
+    // Camera setup function
     void cameraSetup() {
     camera_config_t config;
     config.ledc_channel = LEDC_CHANNEL_0;
@@ -225,39 +262,37 @@ folder when write your own code.
     config.pin_sccb_scl = SIOC_GPIO_NUM;
     config.pin_pwdn = PWDN_GPIO_NUM;
     config.pin_reset = RESET_GPIO_NUM;
-    config.xclk_freq_hz = 20000000;
-    config.frame_size = FRAMESIZE_UXGA;
-    config.pixel_format = PIXFORMAT_JPEG; // for streaming
-    config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
-    config.fb_location = CAMERA_FB_IN_PSRAM;
-    config.jpeg_quality = 12;
-    config.fb_count = 1;
     
-    // if PSRAM IC present, init with UXGA resolution and higher JPEG quality
-    // for larger pre-allocated frame buffer.
-    if(psramFound()){
-        config.jpeg_quality = 10;
-        config.fb_count = 2;
-        config.grab_mode = CAMERA_GRAB_LATEST;
-    } else {
-        // Limit the frame size when PSRAM is not available
-        config.frame_size = FRAMESIZE_SVGA;
-        config.fb_location = CAMERA_FB_IN_DRAM;
-    }
-
-    // camera init
+    // Ultimate performance camera parameter optimization - for 8MB PSRAM
+    config.xclk_freq_hz = 24000000;        // 24MHz XCLK (highest stable frequency)
+    config.frame_size = FRAMESIZE_VGA;     // 800x600 resolution (VGA restored)
+    config.pixel_format = PIXFORMAT_JPEG;  // JPEG format
+    config.grab_mode = CAMERA_GRAB_LATEST; // Always get latest frame
+    config.fb_location = CAMERA_FB_IN_PSRAM; // Use PSRAM
+    config.jpeg_quality = 25;              // Very low JPEG quality focused on frame rate
+    config.fb_count = 6;                   // 6 frame buffers (balance latency and performance)
+    
+    // Initialize camera
     esp_err_t err = esp_camera_init(&config);
     if (err != ESP_OK) {
         Serial.printf("Camera init failed with error 0x%x", err);
         return;
     }
-
+    
+    // Ultimate sensor parameter adjustment - focus on maximum frame rate
     sensor_t * s = esp_camera_sensor_get();
-    // initial sensors are flipped vertically and colors are a bit saturated
-    s->set_vflip(s, 1); // flip it back
-    s->set_brightness(s, 1); // up the brightness just a bit
-    s->set_saturation(s, 0); // lower the saturation
-
+    s->set_vflip(s, 0);         // Vertical flip
+    s->set_brightness(s, 0);    // Default brightness
+    s->set_saturation(s, -2);   // Lowest saturation to reduce processing
+    s->set_contrast(s, 0);      // Default contrast
+    s->set_sharpness(s, -2);    // Lowest sharpness to reduce processing
+    s->set_denoise(s, 0);       // Turn off noise reduction
+    s->set_quality(s, 25);      // Very low JPEG quality focused on maximum frame rate
+    s->set_gainceiling(s, (gainceiling_t)6); // Gain ceiling
+    s->set_agc_gain(s, 0);      // Disable automatic gain control
+    s->set_aec_value(s, 300);   // Fixed exposure value
+    s->set_special_effect(s, 0); // No special effects processing
+    
     Serial.println("Camera configuration complete!");
     }
 
